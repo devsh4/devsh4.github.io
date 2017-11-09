@@ -3,142 +3,290 @@
 	<head>
 		<meta charset = "utf8">
 		<title>Dev Shah</title>	
-				
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://devsh4.github.io/css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
 		<style>
-			
+		
+			body{
+				overflow-x:auto;
+				overflow-y:scroll;
+			}
 			.tabcontent {
 				display: none;
 				padding: 6px 12px;
-				border: 1px solid #ccc;
+				border: 6px solid #ccc;
 				border-top: none;
 			}
 			
 			.textcolor{
 				color:#8bd5e8;
 			}
-			.column {
-				float: left;
-				width: 50%;
+			
+			.color_1
+			{
+				color:#D11F00;
 			}
 			
-			.left {
-				width: 75%;
-			}	
-
-			.right {
-				width: 25%;
-				color: white;
+			.div_style1{
+				position: absolute;
+				top: 0px;
+				right: 0;
+				bottom: 0px;
+				left: 0;
+				background-color: transparent;
+				border-radius: 0;
 			}
-
-			.row:after {
-				content: "";
-				display: table;
-				clear: both;
+			
+			.div_style{
+			    left: 825px;
+				position: absolute;
+				top: 62px;
+				height: 38px;
+				min-height: 16px;
+				width: 141px;
 			}
-			#navbar{
-				overflow:hidden;
-				background-color:#ffffff;
-				color:#144422;
-				font-size:20px;
-				text-align:center;
-			}
-			#navbar a {
-				float: left;
-				display: block;
-				color: #222222;
+			.button{
+				display: inline-block;
+				background-color: #ffffff;
+				border:5px #0000ff;
+				border-style: solid;
+				border-radius: 15px;
+				color: #000000;
 				text-align: center;
-				padding: 14px;
-				text-decoration: none;
+				font-size: 12px;
+				padding: 20px;
+				width: 90px;
+				height:45px;
+				transition: all 0.5s;
+				cursor: pointer;
+				margin: 5px;
 			}
-			#navbar a:hover {
-				background-color: #ddd;
-				color: black;
+			.button span {
+				cursor: pointer;
+				display: inline-block;
+				position: absolute;
+				top:22px;
+				right:15px;
+				transition: 0.2s;
 			}
 
-			#navbar a.active {
-				background-color: #4CAF50;
-				color: white;
-			}			
+			.button span:after {
+				content: '\00bb';
+				position: absolute;
+				opacity: 0;
+				top: 0;
+				right: -20px;
+				transition: 0.5s;
+			}
+
+			.button:hover span {
+				padding-right: 10px;
+			}
+
+			.button:hover span:after {
+				opacity: 1;
+				right: 0;
+			}
 			.content {
 				padding: 16px;
 			}
-
-			/* The sticky class is added to the navbar with JS when it reaches its scroll position */
-			.sticky {
-				position: fixed;
-				top: 0;
-				width: 100%
+			.txtNew {
+				word-wrap: break-word;
 			}
-
-			/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-			.sticky + .content {
-				padding-top: 60px;
+			
+			.txtNew a{
+				color: inherit;
 			}
+			
+			.card{
+				width: 200px;
+				height: 310px;
+				box-shadow: 5px 5px 10px #888888;
+				margin: auto;
+   				text-align: center;
+			}
+			
 				
+			.footer-wrapper{
+				background: #1a1e23;
+				padding: 20px;
+				color: #fff;
+				position: fixed;
+				left: 0px;
+				bottom: 0px;
+				width: 100%;
+			}
+			
+			.fa{
+				box-sizing: border-box;
+				padding: 7px;
+				font-size: 14px;
+				width: 35px;
+				text-align: center;
+				text-decoration: none;
+				margin: 4px 4px;
+				
+			}
+
+			.fa:hover {
+				opacity: 0.7;
+			}			
+			
+			.fa-linkedin {
+				background: #007bb5;
+				color: white;
+				content: "\f0e1";
+			}
+			.fa-facebook {
+				background: #3B5998;
+				color: white;
+				content: "\f09a";
+			}
+			
+			.fa-github {
+				background: #000000;
+				color: white;
+				content: "\f09a";
+			}
+			
+			.tt-overlay{
+				position: absolute !important;
+				left: 350px;
+				top: 35px;
+				right: 280px;
+				height: 225px;
+				color:#ffffff;
+			}
+			#tt-overlay_id{
+				background-image: url("assets/workspace.jpg");
+				opacity:0.3;
+				background-size: cover;
+				background-repeat: no-repeat;
+				padding: 15px;
+			}
+	
 		</style>
 		
 	</head>
-	<body onscroll="myFunction()">
-		<div class="row">
-			<div><h2>MY NAME IS</h2></div>
-			<div class = "column left"><h1><span class=textcolor> DEV SHAH</span> </h1></div>
-			<div class = "column right">
-				<img src='C:\Users\Dev Shah\Desktop\Dev\Documents\Dev.jpg' height=200 width=200>
-				<ul>
-					<li><strong>Name:&nbsp;</strong>Dev Shah</li>
-					<li><strong>DOB:&nbsp;</strong>02/06/94</li>
-					<li><strong>Nationality:&nbsp;</strong>Indian</li>
-					<li><strong>Phone:&nbsp;</strong>(343) 333 7451</li>
-					<li><strong>Email:&nbsp;</strong>devsh2694@gmail.com</li>
-				</ul>
-			</div>
-		</div>
 	
-	
-		<div id="navbar">
-			<a href="#home">HOME</a>
-			<a href="#about">ABOUT</a>
-			<a href="#experience">EXPERIENCE</a>
-			<a href="#projects">PROJECTS</a>
-			<a href="#education">EDUCATION</a>
-			<a href="#interests">INTERESTS</a>
-			<a href="#snapshots">SNAPSHOTS</a>
+	<body bgcolor="#000000" class style>
+		<div class = "div_style1">
+		<div class ="txtNew" style="position:absolute; top:95px; left:200px; width:150px; height:150px;">
+			<span class = "color_1">
+				<span style = "font-size:46px;">
+					<span style = "font-weight:bold;">	
+						<span style ="font-family:lulo-clean-w01-one-bold,sans-serif; letter-spacing:0.3em; line-height:100%;"> 
+							<a href="https://devsh4.github.io/" style="cursor:pointer; text-decoration:none;"> DEV </a> 
+						</span>	
+					</span>
+				</span>
+			</span>
 		</div>
 		
-		<div class="content">
-		<p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-		<p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-		<p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-		<p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-		<p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-		<p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-		<p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-		<p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p><p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-		<p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-		<p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-		<p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p><p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-		<p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-		<p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-		<p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+		<div class ="txtNew" style="position:absolute; top:135px; left:200px; width:200px; height:20px;">
+			<h6 class="font_6" style= "font-size:26px;">
+				<span style = "font-size:36px;">
+					<span style = "font-weight:bolder;">
+						<span style ="font-family:lulo-clean-w01-one-bold,sans-serif; letter-spacing:0.2em;line-height:200%;"> 
+							<a href="https://devsh4.github.io/" style="cursor:pointer; text-decoration:none;"> SHAH </a> 
+						</span> 
+					</span>
+				</span>
+			</h6>
+		</div>	
+		
+		
+		
+		
+		<div id="tt-overlay_id" class="tt-overlay" style="background-color: rgba(26,30,35,0.85)"></div>
+		
+		<div style="position:absolute;top:190px;right:300px;text-align:center;width:90px;height:40px;">
+			<a href="assets/myresume.pdf" target="_blank" data-type="document" role="button">
+				<button class="button" style="vertical-align:middle;"><span><strong>RESUME</strong></span></button>
+			</a>
+		</div>
 		</div>
 	
-		<script>
-			// Get the navbar
-			var navbar = document.getElementById("navbar");
-
-			// Get the offset position of the navbar
-			var sticky = navbar.offsetTop;
-
-			// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-			function myFunction() {
-			if (window.pageYOffset > = sticky) 
-				{
-					navbar.classList.add("sticky")
-				} else {
-					navbar.classList.remove("sticky");
-				}	
-			}
-		</script>
+		
+		<div class = "card" style = "position:absolute; top:35px; right:40px;">	
+			<img src='assets/Dev.jpg' class="img-circle" height=150 width=150>
+			
+		
+				
+			<h5> </h5>
+			<h5 style="color_1">	
+				<strong>2nd June, 94</strong>
+			<h5>
+			<h5>	
+				<strong>Indian</strong>
+			</h5>
+			<p>
+				343 333 7451	
+			</p>
+			<h5>
+				<strong>devsh2694@gmail.com</strong>
+			</h5>
+			<div style = "text-align:center">  
+				<a href="https://www.linkedin.com/in/dev-shah-20324b80/" class="fa fa-linkedin"></a>  
+				<a href="https://www.facebook.com/dev.shah.18400" class="fa fa-facebook"></a> 
+				<a href="https://www.github.com/devsh4" class="fa fa-github"></a> 
+			</div>
+		</div>
+		
+		
+		<div class="container" style = "position:absolute; top:350px; left:200px;">
+			<ul class="nav nav-tabs">
+				<li><a data-toggle="tab" href="#home" style="cursor:pointer; text-decoration:none;"><strong>EXPERIENCE</strong></a></li>
+				<li><a data-toggle="tab" href="#menu1"><strong>SKILLS</strong></a></li>
+				<li><a data-toggle="tab" href="#menu2"><strong>PROJECTS</strong></a></li>
+				<li><a data-toggle="tab" href="#menu3"><strong>EDUCATION</strong></a></li>
+				<li><a data-toggle="tab" href="#menu4"><strong>CERTIFICATIONS</strong></a></li>
+			</ul>
+			
+			<div class="tab-content">
+				<div id="home" class="tab-pane fade">
+					<h3>EXPERIENCE</h3>
+					<p>Description</p>
+					<p>
+						Software testing is an investigation conducted to provide stakeholders with information about the quality of the software product or service under test.[1] Software testing can also provide an objective, independent view of the software to allow the business to appreciate and understand the risks of software implementation. Test techniques include the process of executing a program or application with the intent of finding software bugs (errors or other defects), and verifying that the software product is fit for use. 
+						Software testing involves the execution of a software component or system component to evaluate one or more properties of interest. In general, these properties indicate the extent to which the component or system under test:
+						Software testing involves the execution of a software component or system component to evaluate one or more properties of interest. In general, these properties indicate the extent to which the component or system under test:																Software testing involves the execution of a software component or system component to evaluate one or more properties of interest. In general, these properties indicate the extent to which the component or system under test:
+					</p>
+				</div>
+				<div id="menu1" class="tab-pane fade">
+					<h3>SKILLSET</h3>
+					<p>List your skills</p>
+				</div>
+				<div id="menu2" class="tab-pane fade">
+					<h3>PROJECTS</h3>
+					<p> Projects List here</p>
+				</div>
+				<div id="menu3" class="tab-pane fade">
+					<h3>EDUCATION</h3>
+					<p>List your certifications here.</p>
+				</div>
+				<div id="menu4" class="tab-pane fade">
+					<h3>CERTIFICATIONS</h3>
+					<p>List your certifications here.</p>
+				</div>
+			</div>
+		</div>	
+		
+		<div style = "position:absolute; top:450px; left:250px;">
+			<h3>Test start page</h3>
+		</div>
+		
+		<footer class="footer-wrapper">
+			<div class = "container">
+				<div style='text-align:center'>
+					© Developed by Dev Shah
+				</div>
+			</div>
+		</footer>
 	</body>
 </html>
 
