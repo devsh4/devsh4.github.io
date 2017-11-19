@@ -3,52 +3,49 @@
 	<head>
 		<meta charset = "utf8">
 		<title>Dev Shah</title>	
+				
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://devsh4.github.io/css/style.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 		
 		<style>
 		
 			body{
-				overflow-x:auto;
+				overflow-x:hidden;
 				overflow-y:scroll;
+				background-color:#ffffff;
 			}
+			
+			.container1{
+				display: inline-block;
+				width: 100%;
+				padding-left: 10px;
+				padding-right: 50px;
+				padding-bottom: 50px;
+			}	
+			
 			.tabcontent {
 				display: none;
 				padding: 6px 12px;
 				border: 6px solid #ccc;
 				border-top: none;
-			}
-			
-			.textcolor{
-				color:#8bd5e8;
-			}
-			
-			.color_1
-			{
-				color:#D11F00;
+				left:150px;
 			}
 			
 			.div_style1{
-				position: absolute;
-				top: 0px;
-				right: 0;
-				bottom: 0px;
-				left: 0;
+				display: inline-block;
+				width: 100%;
+				position:absolute;
+				left:150px;
+				top:35px;
 				background-color: transparent;
 				border-radius: 0;
 			}
 			
-			.div_style{
-			    left: 825px;
-				position: absolute;
-				top: 62px;
-				height: 38px;
-				min-height: 16px;
-				width: 141px;
-			}
 			.button{
 				display: inline-block;
 				background-color: #ffffff;
@@ -58,7 +55,7 @@
 				color: #000000;
 				text-align: center;
 				font-size: 12px;
-				padding: 20px;
+				padding: 5px;
 				width: 90px;
 				height:45px;
 				transition: all 0.5s;
@@ -91,9 +88,11 @@
 				opacity: 1;
 				right: 0;
 			}
+			
 			.content {
 				padding: 16px;
 			}
+			
 			.txtNew {
 				word-wrap: break-word;
 			}
@@ -108,9 +107,8 @@
 				box-shadow: 5px 5px 10px #888888;
 				margin: auto;
    				text-align: center;
-			}
+			}	
 			
-				
 			.footer-wrapper{
 				background: #1a1e23;
 				padding: 20px;
@@ -154,11 +152,11 @@
 			}
 			
 			.tt-overlay{
-				position: absolute !important;
-				left: 350px;
-				top: 35px;
-				right: 280px;
+				position:absolute;
+				top:20px;
+				left:150px;
 				height: 225px;
+				width: 650px;
 				color:#ffffff;
 			}
 			#tt-overlay_id{
@@ -166,122 +164,515 @@
 				opacity:0.3;
 				background-size: cover;
 				background-repeat: no-repeat;
-				padding: 15px;
 			}
-	
-		</style>
-		
+			
+			.font {
+				font: normal normal normal 15px/1.3em helvetica-w01-light,helvetica-w02-light,sans-serif;
+				color: #494949;
+			}
+			.font_1 {
+				font: normal normal normal 40px/1.3em helvetica-w01-roman,helvetica-w02-roman,helvetica-lt-w10-roman,sans-serif;
+				color: #494949;
+			}
+			
+			.color_1
+			{
+				color:#FF430E;
+			}
+
+			.color_2 {
+				color: #D11F00;
+			}
+			.color_3 {
+				color: #000000;
+			}	
+			.color_4 {
+				color: #063852;
+			}	
+			
+			.line_break {
+				border-bottom: 1px solid rgba(154, 154, 154, 0.45);
+				height: 0 !important;
+				min-height: 0 !important;
+			}
+			
+			.post-thumbnail {
+				margin-bottom: 20px;
+				overflow: hidden;
+			}
+			
+					
+			.timeline {
+				position: absolute;
+				top:100px;
+				max-width: 600px;
+				margin: 0 auto;
+			}
+
+			/* The actual timeline (the vertical ruler) */
+			.timeline::after {
+				content: '';
+				position: absolute;
+				width: 4px;
+				background-color: red;
+				top: 35px;
+				bottom: 0;
+				left: 443px;
+			}
+
+			/* Container around content */
+			.container {
+				padding: 10px 10px;
+				position: relative;
+				background-color: inherit;
+				width: 50%;
+			}
+
+			/* The circles on the timeline */
+			.container::after {
+				content: '';
+				position: absolute;
+				width: 25px;
+				height: 25px;
+				right: -17px;
+				background-color: white;
+				border: 4px solid #FF9F55;
+				top: 15px;
+				border-radius: 50%;
+				z-index: 1;
+			}
+
+			/* Place the container to the left */
+			.left {
+				left: 0;
+			}
+
+			/* Place the container to the right */
+			.right {
+				left: 55%;
+			}
+
+			/* Add arrows to the left container (pointing right) */
+			.left::before {
+				content: " ";
+				height: 0;
+				position: absolute;
+				top: 22px;
+				width: 0;
+				z-index: 1;
+				right: 30px;
+				border: medium solid black;
+				border-width: 10px 0 10px 10px;
+				border-color: transparent transparent transparent black;
+			}
+
+			/* Add arrows to the right container (pointing left) */
+			.right::before {
+				content: " ";
+				height: 0;
+				position: absolute;
+				top: 22px;
+				width: 0;
+				z-index: 1;
+				left: 30px;
+				border: medium solid black;
+				border-width: 10px 10px 10px 0;
+				border-color: transparent black transparent transparent;
+			}
+
+			/* Fix the circle for containers on the right side */
+			.right::after {
+				left: -16px;
+			}
+
+			/* The actual content */
+			.content {
+				padding: 10px 10px;
+				background-color: pink;
+				position: relative;
+				right:20px;
+				border-radius: 6px;
+			}
+
+			/* Media queries - Responsive timeline on screens less than 600px wide */
+			@media all and (max-width: 600px) {
+			/* Place the timelime to the left */
+			.timeline::after {
+				left: 31px;
+			}
+  
+			/* Full-width containers */
+			.container {
+				width: 100%;
+				padding-left: 70px;
+				padding-right: 25px;
+			}
+  
+			/* Make sure that all arrows are pointing leftwards */
+			.container::before {
+				left: 60px;
+				border: medium solid white;
+				border-width: 10px 10px 10px 0;
+				border-color: transparent white transparent transparent;
+			}
+
+			/* Make sure all circles are at the same spot */
+			.left::after, .right::after {
+				left: 15px;
+			}
+  
+			/* Make all right containers behave like the left ones */
+			.right {
+				left: 0%;
+			}
+		}
+		* {
+			box-sizing: border-box;
+		}
+		</style>	
 	</head>
 	
-	<body bgcolor="#000000" class style>
+	<body>	
 		<div class = "div_style1">
-		<div class ="txtNew" style="position:absolute; top:95px; left:200px; width:150px; height:150px;">
-			<span class = "color_1">
-				<span style = "font-size:46px;">
-					<span style = "font-weight:bold;">	
-						<span style ="font-family:lulo-clean-w01-one-bold,sans-serif; letter-spacing:0.3em; line-height:100%;"> 
-							<a href="https://devsh4.github.io/" style="cursor:pointer; text-decoration:none;"> DEV </a> 
-						</span>	
+			<div class ="txtNew" style="position:relative; top:10px;">
+				<span class = "color_1">
+					<span style = "font-size:46px;">
+						<span style = "font-weight:bold;">	
+							<span style ="font-family:lulo-clean-w01-one-bold,sans-serif; letter-spacing:0.3em; line-height:25%;"> 
+								<a data-toggle="tab" href="#me" style="cursor:pointer; text-decoration:none;">  DEV </a> 
+							</span>	
+						</span>
 					</span>
 				</span>
-			</span>
-		</div>
+			</div>
 		
-		<div class ="txtNew" style="position:absolute; top:135px; left:200px; width:200px; height:20px;">
-			<h6 class="font_6" style= "font-size:26px;">
-				<span style = "font-size:36px;">
-					<span style = "font-weight:bolder;">
-						<span style ="font-family:lulo-clean-w01-one-bold,sans-serif; letter-spacing:0.2em;line-height:200%;"> 
-							<a href="https://devsh4.github.io/" style="cursor:pointer; text-decoration:none;"> SHAH </a> 
-						</span> 
+			<div class 	="txtNew" style="position:relative; top:10px;">
+				<h6 style= "font-size:26px;">
+					<span style = "font-size:36px;">
+						<span style = "font-weight:bolder;">
+							<span style ="font-family:lulo-clean-w01-one-bold,sans-serif; letter-spacing:0.2em;line-height:25%;color:#BA5536";"> 
+								<a data-toggle="tab" href="#me" style="cursor:pointer; text-decoration:none;"> SHAH </a> 
+							</span> 
+						</span>
 					</span>
-				</span>
-			</h6>
-		</div>	
+				</h6>
+			</div>	
 		
+			<div id="tt-overlay_id" class="tt-overlay" style="background-color: rgba(26,30,35,0.85)"></div>
 		
-		
-		
-		<div id="tt-overlay_id" class="tt-overlay" style="background-color: rgba(26,30,35,0.85)"></div>
-		
-		<div style="position:absolute;top:190px;right:300px;text-align:center;width:90px;height:40px;">
-			<a href="assets/myresume.pdf" target="_blank" data-type="document" role="button">
-				<button class="button" style="vertical-align:middle;"><span><strong>RESUME</strong></span></button>
-			</a>
-		</div>
-		</div>
-	
-		
-		<div class = "card" style = "position:absolute; top:35px; right:40px;">	
-			<img src='assets/Dev.jpg' class="img-circle" height=150 width=150>
+			<div style="position:absolute;top:175px;right:575px;text-align:center;width:90px;height:40px;">
+				<a href="assets/myresume.pdf" target="_blank" data-type="document" role="button">
+					<button class="button" style="vertical-align:middle;"><span class="color_4"><strong>RESUME</strong></span></button>
+				</a>
+			</div>
 			
-		
-				
-			<h5> </h5>
-			<h5 style="color_1">	
-				<strong>2nd June, 94</strong>
-			<h5>
-			<h5>	
-				<strong>Indian</strong>
-			</h5>
-			<p>
-				343 333 7451	
-			</p>
-			<h5>
-				<strong>devsh2694@gmail.com</strong>
-			</h5>
-			<div style = "text-align:center">  
-				<a href="https://www.linkedin.com/in/dev-shah-20324b80/" class="fa fa-linkedin"></a>  
-				<a href="https://www.facebook.com/dev.shah.18400" class="fa fa-facebook"></a> 
-				<a href="https://www.github.com/devsh4" class="fa fa-github"></a> 
+			<div class = "card" style="position:absolute;top:0px;right:325px">	
+				<img src='assets/Dev.jpg' class="img-circle" height=150 width=150>
+			
+				<h5> </h5>
+				<h5>	
+					<strong>2nd June, 94</strong>
+				<h5>
+				<h5>	
+					<strong>Indian</strong>
+				</h5>
+				<p>
+					343 333 7451	
+				</p>
+				<h5>
+					<strong>devsh2694@gmail.com</strong>
+				</h5>
+				<div style = "text-align:center">  
+					<a href="https://www.github.com/devsh4" class="fa fa-github"></a> 
+					<a href="https://www.linkedin.com/in/dev-shah-20324b80/" class="fa fa-linkedin"></a>  
+					<a href="https://www.facebook.com/dev.shah.18400" class="fa fa-facebook"></a> 
+				</div>
 			</div>
 		</div>
 		
-		
-		<div class="container" style = "position:absolute; top:350px; left:200px;">
+		<div class="container1" style = "position:absolute; top:370px; left:200px;">
 			<ul class="nav nav-tabs">
-				<li><a data-toggle="tab" href="#home" style="cursor:pointer; text-decoration:none;"><strong>EXPERIENCE</strong></a></li>
+				<li><a data-toggle="tab" href="#home"><strong>EXPERIENCE</strong></a></li>
 				<li><a data-toggle="tab" href="#menu1"><strong>SKILLS</strong></a></li>
 				<li><a data-toggle="tab" href="#menu2"><strong>PROJECTS</strong></a></li>
 				<li><a data-toggle="tab" href="#menu3"><strong>EDUCATION</strong></a></li>
 				<li><a data-toggle="tab" href="#menu4"><strong>CERTIFICATIONS</strong></a></li>
 			</ul>
 			
+		
 			<div class="tab-content">
-				<div id="home" class="tab-pane fade">
-					<h3>EXPERIENCE</h3>
-					<p>Description</p>
-					<p>
-						Software testing is an investigation conducted to provide stakeholders with information about the quality of the software product or service under test.[1] Software testing can also provide an objective, independent view of the software to allow the business to appreciate and understand the risks of software implementation. Test techniques include the process of executing a program or application with the intent of finding software bugs (errors or other defects), and verifying that the software product is fit for use. 
-						Software testing involves the execution of a software component or system component to evaluate one or more properties of interest. In general, these properties indicate the extent to which the component or system under test:
-						Software testing involves the execution of a software component or system component to evaluate one or more properties of interest. In general, these properties indicate the extent to which the component or system under test:																Software testing involves the execution of a software component or system component to evaluate one or more properties of interest. In general, these properties indicate the extent to which the component or system under test:
-					</p>
+				<div id="me" class="tab-pane fade">
+					<div id="mainPageContent">
+						<div class="txtNew" id="about_me" style="left: 80px; width: 200px; height:200px;position: absolute; top: 100px;">	
+							<h3 style="text-align:center;">What I aspire?</h3>
+							<p>&nbsp;<p>
+							<img src="assets/sdet_venn.png" height="300px" width="400px" style="text-align:center;">
+						</div>
+						<div class="txtNew" id="about_me" style="left: 533px; width: 280px; height:900px;position: absolute; top: 75px;">
+							<p class="font" style="text-align:center;">
+							<span class="color_3">Hi. I’m </span><span class="color_2">Dev</span><span class="color_3">. I enjoy making people’s lives easier through technology.</span></p>
+							<p class="font" style="text-align:center;"><span class="color_3"><span class="wixGuard">​</span></span></p>
+							<p class="font" style="text-align:center;"><span class="color_3">I’ve been in the </span><span class="color_2">IT industry </span><span class="color_3">industry for over 2 years, and if I’m not helping an end user solve a problem, you’ll find me talking numbers with the management, or brainstorming a new idea with my team.</span></p>
+							<p class="font" style="text-align:center;"><span class="color_3"><span class="wixGuard">​</span></span></p>
+								<p class="font" style="text-align:center;"><span class="color_3">With me, it’s all about </span><span class="color_2">change</span><span class="color_3">. Bringing about change with calculated risks keeps my job exciting and&nbsp;my team </span><span class="color_2">motivated</span><span class="color_3">. They know our problems are theirs to solve, and they can rely on my guidance and expertise to </span><span class="color_2">coach </span><span class="color_3">them through the hurdles.</span></p>
+							<p class="font" style="text-align:center;"><span class="color_3"><span class="wixGuard">​</span></span></p>
+							<p class="font" style="text-align:center;"><span class="color_3">I </span><span class="color_2">learn </span><span class="color_3">from multiple sources – books, blogs, certification and my managers. I don’t like reinventing the wheel. I establish best practices, and tweak as required.</span></p>
+							<p class="font" style="text-align:center;"><span class="color_3">What do others say </span><span class="color_2">about me</span><span class="color_3">? They&nbsp;say I’m reliable, approachable, persistent and funny.</span></p>
+						</div>
+					</div>
 				</div>
-				<div id="menu1" class="tab-pane fade">
+				
+				<div id="home" class="tab-pane fade" style="height:900px;">
+					<!-- EXPERIENCE -->
+					<div>
+						<a href="http://www.pay1.in/" target="_blank" style="cursor: pointer;">
+							<div style="position:absolute; top:50px; left:50px; width:300px; height:150px;">
+									<img data-type="image" src="assets/exp1_1.png" style="width: 250px; height: 200px; object-fit: cover;opacity:1">
+							</div>
+						</a>
+							
+						<div class="div_style2" style="position: absolute; width: 303px; height: 120px; top: 85px; left: 521px;">
+							<div data-exact-height="48" data-content-padding-horizontal="0" data-content-padding-vertical="0" style="position: absolute; left: 120px; top: 0px; width: 47px; height: 48px;">
+								<div style="position: relative; width: 47px; height: 48px;">
+									<img data-type="image" src="https://static.wixstatic.com/media/841cd7_c69062f801dc4fdcb91c1d0280264c6a~mv2.png/v1/fill/w_47,h_48,al_c,usm_0.66_1.00_0.01/841cd7_c69062f801dc4fdcb91c1d0280264c6a~mv2.png" style="width: 47px; height: 48px; object-fit: cover;">
+								</div>
+							</div>
+							
+							<div class="txtNew" style="width: 303px; position: absolute; left: 0px; top: 40px;">
+								<h4 class = "font_1" style="font-size:16px; text-align:center;">
+									<span class="color_3">
+										<span style="font-size:16px;">
+											<span style="font-family:lulo-clean-w01-one-bold,sans-serif;">
+												<span style="font-weight:bold;letter-spacing:0.2em;">
+													SENIOR QA
+												</span>
+											</span>
+										</span>
+									</span>
+								</h4>
+								<h6 style="font-size:12px; text-align:center;">
+									<span class="color_3">
+										<span style="font-family:avenir-lt-w01_35-light1475496,sans-serif;">
+											<span style="font-size:16px;">Oct 2016 - Sep 2017</span>
+										</span>
+									</span>
+								</h6>
+								<div style="overflow:hidden;position: relative; left: 125px; top: 0px;">
+									<img data-type="image" src="assets/india.jpg" style="width: 45px; height: 40px;"></img>
+								</div>
+							</div>
+						</div>
+					</div>
+						
+						<div class="txtNew" style="left: 916px; width: 59px; position: relative; top: 80px;">
+							<h6 class="font_1" style="font-size:16px;">
+								<span class="color_3">
+									<span style="text-decoration:underline;">
+										<a href="https://devsh4.github.io">
+											<span style="font-size:14px;">
+												<span style="font-family:avenir-lt-w01_35-light1475496,sans-serif;">Details</span>
+											</span>	
+										</a>
+									</span>
+								</span>
+							</h6>
+						</div>
+						
+						<div class="line_break" style="left: 0px; width: 981px; position: absolute; top: 275px; height: 5px;">
+							<div class="hl1line"></div>
+						</div>
+						
+						<a href="https://marketintelligence.spglobal.com/" target="_blank" style="cursor: pointer;">
+							<div style="position:absolute; top:360px; left:85px; width:300px; height:150px;">
+									<img data-type="image" src="assets/exp2_1.png" style="width: 250px; height: 50px; object-fit: cover;opacity:1">
+							</div>
+						</a>
+						
+						<div class="div_style2" style="position: absolute; width: 303px; height: 120px; top: 320px; left: 521px;">
+							<div data-exact-height="48" data-content-padding-horizontal="0" data-content-padding-vertical="0" style="position: absolute; left: 120px; top: 0px; width: 47px; height: 48px;">
+								<div style="position: relative; width: 47px; height: 48px;">
+									<img data-type="image" src="assets/qa_eng.jpg" style="width: 60px; height: 60px; object-fit: cover;">
+								</div>
+							</div>
+							
+							<div class="txtNew" style="width: 303px; position: absolute; left: 0px; top: 50px;">
+								<h4 class="font_1" style="font-size:16px; text-align:center;">
+									<span class="color_3">
+										<span style="font-size:16px;">
+											<span style="font-family:lulo-clean-w01-one-bold,sans-serif;">
+												<span style="font-weight:bold;letter-spacing:0.1em;">
+													QUALITY ENGINEER
+												</span>
+											</span>
+										</span>
+									</span>
+								</h4>
+								<h4 class="font_1" style="font-size:16px; text-align:center;">
+									<span class="color_3">
+										<span style="font-family:avenir-lt-w01_35-light1475496,sans-serif;">
+											<span style="font-size:16px;">July 2015 - Sep 2016</span>
+										</span>
+									</span>
+								</h4>
+								<div style="overflow:hidden;position: relative; left: 125px; top: 0px;">
+									<img data-type="image" src="assets/india.jpg" style="width: 45px; height: 40px;"></img>
+								</div>
+							</div>
+						</div>
+					
+						<div class="txtNew" style="left: 916px; width: 59px; position: relative; top: 300px;">
+							<h6 style="font-size:12px;">
+								<span class="color_3">
+									<span style="text-decoration:underline;">
+										<a href="https://devsh4.github.io/">
+											<span style="font-size:14px;">
+												<span style="font-family:avenir-lt-w01_35-light1475496,sans-serif;">Details</span>
+											</span>	
+										</a>
+									</span>
+								</span>
+							</h6>
+						</div>
+						
+						<div class="line_break" style="left: 0px; width: 981px; position: absolute; top: 525px; height: 5px;">
+							<div class="hl1line"></div>
+						</div>
+						
+				</div>
+			
+				<div id="menu1" class="tab-pane fade" style="height:900px;">
 					<h3>SKILLSET</h3>
 					<p>List your skills</p>
 				</div>
-				<div id="menu2" class="tab-pane fade">
-					<h3>PROJECTS</h3>
-					<p> Projects List here</p>
+				
+				
+				<div id="menu2" class="tab-pane fade" style="height:900px;">
+					<!-- PROJECTS -->
+					<div class="timeline">
+						<div class="container left">
+							<div class="content">
+								<h2>2017</h2>
+								<p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+							</div>
+						</div>
+						
+						<div class="container right">
+							<div class="content">
+								<h2>2016</h2>
+								<p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+							</div>
+						</div>
+						
+						<div class="container left">
+							<div class="content">
+								<h2>2015</h2>
+								<p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+							</div>
+						</div>
+						
+						<div class="container right">
+							<div class="content">
+								<h2>2012</h2>
+								<p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+							</div>
+						</div>
+						
+						<div class="container left">
+							<div class="content">
+								<h2>2011</h2>
+								<p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+							</div>
+						</div>
+						
+						<div class="container right">
+							<div class="content">
+								<h2>2007</h2>
+								<p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div id="menu3" class="tab-pane fade">
-					<h3>EDUCATION</h3>
-					<p>List your certifications here.</p>
+				
+				
+				<div id="menu3" class="tab-pane fade" style="height:900px;">
+					<!-- EDUCATION -->
+					<div style="display:block;">
+						<h2></h2>
+						<div class="col-sm-3">
+							<article class="blog-post-wrapper">
+								<div class="figure">
+									<div class="post-thumbnail">
+										<a href="http://www.queensu.ca/">
+											<img width="340" height="225" src="assets/queens.png" class="img-responsive wp-post-image">
+										</a>
+									</div>
+								</div>
+								<header class="entry-header">
+									<div style="position:relative; top:10px; text-align:center;">
+										<span>
+											<strong>Master of Science (M.S.)<br>Computing</strong>
+										</span>
+									</div>
+									<div style="position:relative;top:20px;">
+										<ul class="list-inline">
+											<li>
+												<span>
+													<i class="fa fa-graduation-cap"></i>
+														0.00 GPA
+												</span>
+											</li>
+											<li>
+												<i class="fa fa-calendar"></i>2017 – 2018
+											</li>
+										</ul>
+									</div>
+								</header>
+							</article>
+						</div>
+
+							<div class="col-sm-3">
+								<article class="blog-post-wrapper">
+									<div class="figure">
+										<div "post-thumbnail">
+											<a href="http://www.nmims.edu/">
+												<img width="340" height="200" src="assets/nmims.png" class="img-responsive wp-post-image">
+											</a>
+										</div>
+									</div>
+								
+									<header class="entry-header">
+										<div style="position:relative; top:20px; text-align:center;">
+											<span>
+												<strong> Bachelor of Technology (B.Tech.)<br>Computer Engineering </strong>
+											</span>
+										</div>
+										<div style="position:relative;top:30px;">
+											<ul class="list-inline">
+												<li>
+													<span>
+														<i class="fa fa-graduation-cap"></i>
+														3.13 GPA
+													</span>
+												</li>
+												<li>
+													<i class="fa fa-calendar"></i>2011 – 2015
+												</li>
+											</ul>
+										</div>
+									</header>
+								</article>
+							</div>
+					</div>
 				</div>
-				<div id="menu4" class="tab-pane fade">
+				
+				<div id="menu4" class="tab-pane fade" style="height:900px;">
 					<h3>CERTIFICATIONS</h3>
 					<p>List your certifications here.</p>
 				</div>
-			</div>
-		</div>	
-		
-		<div style = "position:absolute; top:450px; left:250px;">
-			<h3>Test start page</h3>
 		</div>
 		
 		<footer class="footer-wrapper">
-			<div class = "container">
+			<div>
 				<div style='text-align:center'>
 					© Developed by Dev Shah
 				</div>
