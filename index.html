@@ -17,7 +17,7 @@
 			body{
 				overflow-x:hidden;
 				overflow-y:scroll;
-				background-color:#ffffff;
+				background-color:#fffff0;
 			}
 			
 			.container1{
@@ -28,14 +28,14 @@
 				padding-bottom: 50px;
 			}	
 			
-			.tabcontent {
-				display: none;
-				padding: 6px 12px;
-				border: 6px solid #ccc;
-				border-top: none;
+			.tab-content {
+		
 				left:150px;
+				width: 100%;
+				height: 500px;
+				
 			}
-			
+				
 			.div_style1{
 				display: inline-block;
 				width: 100%;
@@ -201,11 +201,11 @@
 				overflow: hidden;
 			}
 			
-					
 			.timeline {
 				position: absolute;
-				top:100px;
-				max-width: 600px;
+				left:-175px;
+				top:110px;
+				max-width: 1000px;
 				margin: 0 auto;
 			}
 
@@ -214,17 +214,18 @@
 				content: '';
 				position: absolute;
 				width: 4px;
-				background-color: red;
-				top: 35px;
+				background-color: #A9A9A9;
+				top: 0;
 				bottom: 0;
-				left: 443px;
+				left: 75%;
+				margin-left: -3px;
 			}
 
 			/* Container around content */
 			.container {
-				padding: 10px 10px;
+				padding: 10px 40px;
 				position: relative;
-				background-color: inherit;
+				background-color: white;
 				width: 50%;
 			}
 
@@ -235,8 +236,8 @@
 				width: 25px;
 				height: 25px;
 				right: -17px;
-				background-color: white;
-				border: 4px solid #FF9F55;
+				background-color: #0AAFF1;
+				border: 4px solid #ADD8E6;
 				top: 15px;
 				border-radius: 50%;
 				z-index: 1;
@@ -249,7 +250,7 @@
 
 			/* Place the container to the right */
 			.right {
-				left: 55%;
+				left: 50%;
 			}
 
 			/* Add arrows to the left container (pointing right) */
@@ -261,9 +262,9 @@
 				width: 0;
 				z-index: 1;
 				right: 30px;
-				border: medium solid black;
+				border: medium solid cyan;
 				border-width: 10px 0 10px 10px;
-				border-color: transparent transparent transparent black;
+				border-color: transparent transparent transparent cyan;
 			}
 
 			/* Add arrows to the right container (pointing left) */
@@ -275,9 +276,9 @@
 				width: 0;
 				z-index: 1;
 				left: 30px;
-				border: medium solid black;
+				border: medium solid cyan;
 				border-width: 10px 10px 10px 0;
-				border-color: transparent black transparent transparent;
+				border-color: transparent cyan transparent transparent;
 			}
 
 			/* Fix the circle for containers on the right side */
@@ -287,45 +288,44 @@
 
 			/* The actual content */
 			.content {
-				padding: 10px 10px;
-				background-color: pink;
+				padding: 10px 30px;
+				background-color: cyan;
 				position: relative;
-				right:20px;
 				border-radius: 6px;
 			}
 
-			/* Media queries - Responsive timeline on screens less than 600px wide */
-			@media all and (max-width: 600px) {
-			/* Place the timelime to the left */
-			.timeline::after {
-				left: 31px;
-			}
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media all and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+  }
   
-			/* Full-width containers */
-			.container {
-				width: 100%;
-				padding-left: 70px;
-				padding-right: 25px;
-			}
+  /* Full-width containers */
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 5px;
+  }
   
-			/* Make sure that all arrows are pointing leftwards */
-			.container::before {
-				left: 60px;
-				border: medium solid white;
-				border-width: 10px 10px 10px 0;
-				border-color: transparent white transparent transparent;
-			}
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
 
-			/* Make sure all circles are at the same spot */
-			.left::after, .right::after {
-				left: 15px;
-			}
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+    left: 15px;
+  }
   
-			/* Make all right containers behave like the left ones */
-			.right {
-				left: 0%;
-			}
-		}
+  /* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+}
 		* {
 			box-sizing: border-box;
 		}
@@ -390,7 +390,7 @@
 			</div>
 		</div>
 		
-		<div class="container1" style = "position:absolute; top:370px; left:200px;">
+		<div class="container1" style = "position:absolute; top:370px; left:200px;" onclick="myFunction()">
 			<ul class="nav nav-tabs">
 				<li><a data-toggle="tab" href="#home"><strong>EXPERIENCE</strong></a></li>
 				<li><a data-toggle="tab" href="#menu1"><strong>SKILLS</strong></a></li>
@@ -400,7 +400,7 @@
 			</ul>
 			
 		
-			<div class="tab-content">
+			<div id="content_main" class="tab-content">
 				<div id="me" class="tab-pane fade">
 					<div id="mainPageContent">
 						<div class="txtNew" id="about_me" style="left: 80px; width: 200px; height:200px;position: absolute; top: 100px;">	
@@ -422,7 +422,7 @@
 					</div>
 				</div>
 				
-				<div id="home" class="tab-pane fade" style="height:900px;">
+				<div id="home" class="tab-pane fade">
 					<!-- EXPERIENCE -->
 					<div>
 						<a href="http://www.pay1.in/" target="_blank" style="cursor: pointer;">
@@ -540,65 +540,68 @@
 						
 				</div>
 			
-				<div id="menu1" class="tab-pane fade" style="height:900px;">
+				<div id="menu1" class="tab-pane fade">
 					<h3>SKILLSET</h3>
 					<p>List your skills</p>
 				</div>
 				
 				
-				<div id="menu2" class="tab-pane fade" style="height:900px;">
+				<div id="menu2" class="tab-pane fade">
 					<!-- PROJECTS -->
 					<div class="timeline">
-						<div class="container left">
-							<div class="content">
-								<h2>2017</h2>
-								<p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
-							</div>
-						</div>
-						
 						<div class="container right">
 							<div class="content">
-								<h2>2016</h2>
-								<p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+								<h3>Nov 2017 - Dec 2017</h3>
+								<h4><strong>Digit Recognizer</strong></h4>
+								<h6><strong> Queen's University </strong></h6>
+								<p>Developed a digit recognizer to classify digit images (0-9) using softmax regression. (Python + TensorFlow)</p>
 							</div>
 						</div>
 						
 						<div class="container left">
 							<div class="content">
-								<h2>2015</h2>
-								<p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+								<h3>Oct 2017 - Dec 2017</h3>
+								<h4><strong>Static analyzer for security vulnerabilities</strong></h4>
+								<h6><strong> Queen's University </strong></h6>
+								<p>Developed a static code analyzer in C# to detect security vulnerabilities like SQL injections and buffer overflow.</p>
 							</div>
 						</div>
 						
 						<div class="container right">
 							<div class="content">
-								<h2>2012</h2>
-								<p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+								<h3>April 2017 - May 2017</h3>
+								<h4><strong>Data normalization</strong></h4>
+								<h6><strong>Plabro (Freelance) </strong></h6>
+								<p>Data cleaning and normalization using Python and optimizing SQL queries to make existing functions effiecient & faster.</p>
 							</div>
 						</div>
 						
 						<div class="container left">
 							<div class="content">
-								<h2>2011</h2>
-								<p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+								<h3>Mar 2017 - April 2017</h3>
+								<h4><strong>App Automation</strong></h4>
+								<h6><strong>Plabro (Freelance) </strong></h6>
+								<p>Created scripts using Java & Appium for automating a widely used chat app to take periodic backups, send emails of chat history, sending broadcast messages and dynamic messages to specific chats based on some data.</p>
 							</div>
 						</div>
 						
 						<div class="container right">
 							<div class="content">
-								<h2>2007</h2>
-								<p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+								<h3>Oct 2014 - April 2015</h3>
+								<h4><strong>Android app</strong></h4>
+								<h6><strong>NMIMS University</strong></h6>
+								<p>Built an android app for the college placement committee in a bid to increase communication between students, faculty & placement cell and make the life of the committee easier by automating important tasks.</p>
 							</div>
 						</div>
 					</div>
 				</div>
 				
 				
-				<div id="menu3" class="tab-pane fade" style="height:900px;">
+				<div id="menu3" class="tab-pane fade">
 					<!-- EDUCATION -->
 					<div style="display:block;">
 						<h2></h2>
-						<div class="col-sm-3">
+						<div class="col-sm-3" style="position:absolute; top:100px; left:0px;">
 							<article class="blog-post-wrapper">
 								<div class="figure">
 									<div class="post-thumbnail">
@@ -613,7 +616,7 @@
 											<strong>Master of Science (M.S.)<br>Computing</strong>
 										</span>
 									</div>
-									<div style="position:relative;top:20px;">
+									<div style="position:relative;top:20px;text-align:center;">
 										<ul class="list-inline">
 											<li>
 												<span>
@@ -630,42 +633,42 @@
 							</article>
 						</div>
 
-							<div class="col-sm-3">
-								<article class="blog-post-wrapper">
-									<div class="figure">
-										<div "post-thumbnail">
-											<a href="http://www.nmims.edu/">
-												<img width="340" height="200" src="assets/nmims.png" class="img-responsive wp-post-image">
-											</a>
-										</div>
+						<div class="col-sm-3" style="position:absolute; top:100px; left:400px;">
+							<article class="blog-post-wrapper">
+								<div class="figure">
+									<div "post-thumbnail">
+										<a href="http://www.nmims.edu/">
+											<img width="340" height="200" src="assets/nmims.png" class="img-responsive wp-post-image">
+										</a>
 									</div>
+								</div>
 								
-									<header class="entry-header">
-										<div style="position:relative; top:20px; text-align:center;">
-											<span>
-												<strong> Bachelor of Technology (B.Tech.)<br>Computer Engineering </strong>
-											</span>
-										</div>
-										<div style="position:relative;top:30px;">
-											<ul class="list-inline">
-												<li>
-													<span>
-														<i class="fa fa-graduation-cap"></i>
+								<header class="entry-header">
+									<div style="position:relative; top:20px; text-align:center;">
+										<span>
+											<strong> Bachelor of Technology (B.Tech.)<br>Computer Engineering </strong>
+										</span>
+									</div>
+									<div style="position:relative;top:30px;text-align:center;">
+										<ul class="list-inline">
+											<li>
+												<span>
+													<i class="fa fa-graduation-cap"></i>
 														3.13 GPA
-													</span>
-												</li>
-												<li>
+												</span>
+											</li>
+											<li>
 													<i class="fa fa-calendar"></i>2011 – 2015
-												</li>
-											</ul>
-										</div>
-									</header>
-								</article>
-							</div>
+											</li>
+										</ul>
+									</div>
+								</header>
+							</article>
+						</div>
 					</div>
 				</div>
 				
-				<div id="menu4" class="tab-pane fade" style="height:900px;">
+				<div id="menu4" class="tab-pane fade">
 					<h3>CERTIFICATIONS</h3>
 					<p>List your certifications here.</p>
 				</div>
@@ -678,6 +681,15 @@
 				</div>
 			</div>
 		</footer>
+		
+		<script>
+			function myFunction() {
+				    var textbox = document.getElementById("home");
+					textbox.focus();
+					textbox.scrollIntoView();
+			}
+		</script>
+
 	</body>
 </html>
 
