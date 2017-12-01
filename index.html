@@ -1,695 +1,1068 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset = "utf8">
-		<title>Dev Shah</title>	
-				
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="https://devsh4.github.io/css/style.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
 
-		
-		<style>
-		
-			body{
-				overflow-x:hidden;
-				overflow-y:scroll;
-				background-color:#fffff0;
-			}
-			
-			.container1{
-				display: inline-block;
-				width: 100%;
-				padding-left: 10px;
-				padding-right: 50px;
-				padding-bottom: 50px;
-			}	
-			
-			.tab-content {
-		
-				left:150px;
-				width: 100%;
-				height: 500px;
-				
-			}
-				
-			.div_style1{
-				display: inline-block;
-				width: 100%;
-				position:absolute;
-				left:150px;
-				top:35px;
-				background-color: transparent;
-				border-radius: 0;
-			}
-			
-			.button{
-				display: inline-block;
-				background-color: #ffffff;
-				border:5px #0000ff;
-				border-style: solid;
-				border-radius: 15px;
-				color: #000000;
-				text-align: center;
-				font-size: 12px;
-				padding: 5px;
-				width: 90px;
-				height:45px;
-				transition: all 0.5s;
-				cursor: pointer;
-				margin: 5px;
-			}
-			.button span {
-				cursor: pointer;
-				display: inline-block;
-				position: absolute;
-				top:22px;
-				right:15px;
-				transition: 0.2s;
-			}
+   <!--- basic page needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>Dev Shah</title>
+	<meta name="description" content="">  
+	<meta name="author" content="">
 
-			.button span:after {
-				content: '\00bb';
-				position: absolute;
-				opacity: 0;
-				top: 0;
-				right: -20px;
-				transition: 0.5s;
-			}
+   <!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-			.button:hover span {
-				padding-right: 10px;
-			}
+ 	<!-- CSS
+   ================================================== -->
+   <link rel="stylesheet" href="css/base.css">  
+   <link rel="stylesheet" href="css/main.css">
+   <link rel="stylesheet" href="css/vendor.css">     
 
-			.button:hover span:after {
-				opacity: 1;
-				right: 0;
-			}
-			
-			.content {
-				padding: 16px;
-			}
-			
-			.txtNew {
-				word-wrap: break-word;
-			}
-			
-			.txtNew a{
-				color: inherit;
-			}
-			
-			.card{
-				width: 200px;
-				height: 310px;
-				box-shadow: 5px 5px 10px #888888;
-				margin: auto;
-   				text-align: center;
-			}	
-			
-			.footer-wrapper{
-				background: #1a1e23;
-				padding: 20px;
-				color: #fff;
-				position: fixed;
-				left: 0px;
-				bottom: 0px;
-				width: 100%;
-			}
-			
-			.fa{
-				box-sizing: border-box;
-				padding: 7px;
-				font-size: 14px;
-				width: 35px;
-				text-align: center;
-				text-decoration: none;
-				margin: 4px 4px;
-				
-			}
+   <!-- script
+   ================================================== -->   
+	<script src="js/modernizr.js"></script>
+	<script src="js/pace.min.js"></script>
 
-			.fa:hover {
-				opacity: 0.7;
-			}			
-			
-			.fa-linkedin {
-				background: #007bb5;
-				color: white;
-				content: "\f0e1";
-			}
-			.fa-facebook {
-				background: #3B5998;
-				color: white;
-				content: "\f09a";
-			}
-			
-			.fa-github {
-				background: #000000;
-				color: white;
-				content: "\f09a";
-			}
-			
-			.tt-overlay{
-				position:absolute;
-				top:20px;
-				left:150px;
-				height: 225px;
-				width: 650px;
-				color:#ffffff;
-			}
-			#tt-overlay_id{
-				background-image: url("assets/workspace.jpg");
-				opacity:0.3;
-				background-size: cover;
-				background-repeat: no-repeat;
-			}
-			
-			.font {
-				font: normal normal normal 15px/1.3em helvetica-w01-light,helvetica-w02-light,sans-serif;
-				color: #494949;
-			}
-			.font_1 {
-				font: normal normal normal 40px/1.3em helvetica-w01-roman,helvetica-w02-roman,helvetica-lt-w10-roman,sans-serif;
-				color: #494949;
-			}
-			
-			.color_1
-			{
-				color:#FF430E;
-			}
+   <!-- favicons
+	================================================== -->
+	<link rel="icon" type="image/png" href="favicon.png">
 
-			.color_2 {
-				color: #D11F00;
-			}
-			.color_3 {
-				color: #000000;
-			}	
-			.color_4 {
-				color: #063852;
-			}	
-			
-			.line_break {
-				border-bottom: 1px solid rgba(154, 154, 154, 0.45);
-				height: 0 !important;
-				min-height: 0 !important;
-			}
-			
-			.post-thumbnail {
+</head>
+
+<style>
+	.post-thumbnail {
 				margin-bottom: 20px;
 				overflow: hidden;
 			}
 			
-			.timeline {
-				position: absolute;
-				left:-175px;
-				top:110px;
-				max-width: 1000px;
-				margin: 0 auto;
-			}
+	.font1{
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:14px;
+	}
+</style>
 
-			/* The actual timeline (the vertical ruler) */
-			.timeline::after {
-				content: '';
-				position: absolute;
-				width: 4px;
-				background-color: #A9A9A9;
-				top: 0;
-				bottom: 0;
-				left: 75%;
-				margin-left: -3px;
-			}
+<body id="top">
 
-			/* Container around content */
-			.container {
-				padding: 10px 40px;
-				position: relative;
-				background-color: white;
-				width: 50%;
-			}
+	<!-- header 
+   ================================================== -->
+   <header>   	
+   	<div class="row">
 
-			/* The circles on the timeline */
-			.container::after {
-				content: '';
-				position: absolute;
-				width: 25px;
-				height: 25px;
-				right: -17px;
-				background-color: #0AAFF1;
-				border: 4px solid #ADD8E6;
-				top: 15px;
-				border-radius: 50%;
-				z-index: 1;
-			}
+   		<div class="top-bar">
+   			<a class="menu-toggle" href="#"><span>Menu</span></a>
 
-			/* Place the container to the left */
-			.left {
-				left: 0;
-			}
+	   		<div class="logo">
+		         <span><strong>DEV SHAH</strong></span>
+		     </div>		      
 
-			/* Place the container to the right */
-			.right {
-				left: 50%;
-			}
+		   	<nav id="main-nav-wrap">
+					<ul class="main-navigation">
+						<li class="current"><a class="smoothscroll"  href="#intro" title="">Home</a></li>
+						<li><a class="smoothscroll"  href="#about" title="">About</a></li>
+						<li><a class="smoothscroll"  href="#resume" title="">Resume</a></li>
+						<li><a class="smoothscroll"  href="#portfolio" title="">Projects</a></li>
+						<li><a class="smoothscroll"  href="#services" title="">Services</a></li>					
+						<li><a class="smoothscroll"  href="#contact" title="">Contact</a></li>				
+					</ul>
+				</nav>    		
+   		</div> <!-- /top-bar --> 
+   		
+   	</div> <!-- /row --> 		
+   </header> <!-- /header -->
 
-			/* Add arrows to the left container (pointing right) */
-			.left::before {
-				content: " ";
-				height: 0;
-				position: absolute;
-				top: 22px;
-				width: 0;
-				z-index: 1;
-				right: 30px;
-				border: medium solid cyan;
-				border-width: 10px 0 10px 10px;
-				border-color: transparent transparent transparent cyan;
-			}
+	<!-- intro section
+   ================================================== -->
+   <section id="intro">   
 
-			/* Add arrows to the right container (pointing left) */
-			.right::before {
-				content: " ";
-				height: 0;
-				position: absolute;
-				top: 22px;
-				width: 0;
-				z-index: 1;
-				left: 30px;
-				border: medium solid cyan;
-				border-width: 10px 10px 10px 0;
-				border-color: transparent cyan transparent transparent;
-			}
+   	<div class="intro-overlay"></div>	
 
-			/* Fix the circle for containers on the right side */
-			.right::after {
-				left: -16px;
-			}
+   	<div class="intro-content">
+   		<div class="row">
 
-			/* The actual content */
-			.content {
-				padding: 10px 30px;
-				background-color: cyan;
-				position: relative;
-				border-radius: 6px;
-			}
+   			<div class="col-twelve">
 
-/* Media queries - Responsive timeline on screens less than 600px wide */
-@media all and (max-width: 600px) {
-  /* Place the timelime to the left */
-  .timeline::after {
-    left: 31px;
-  }
-  
-  /* Full-width containers */
-  .container {
-    width: 100%;
-    padding-left: 70px;
-    padding-right: 5px;
-  }
-  
-  /* Make sure that all arrows are pointing leftwards */
-  .container::before {
-    left: 60px;
-    border: medium solid white;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
-  }
+	   			<h5>Hello, World.</h5>
+	   			<h1>I'm Dev Shah.</h1>
 
-  /* Make sure all circles are at the same spot */
-  .left::after, .right::after {
-    left: 15px;
-  }
-  
-  /* Make all right containers behave like the left ones */
-  .right {
-    left: 0%;
-  }
-}
-		* {
-			box-sizing: border-box;
-		}
-		</style>	
-	</head>
-	
-	<body>	
-		<div class = "div_style1">
-			<div class ="txtNew" style="position:relative; top:10px;">
-				<span class = "color_1">
-					<span style = "font-size:46px;">
-						<span style = "font-weight:bold;">	
-							<span style ="font-family:lulo-clean-w01-one-bold,sans-serif; letter-spacing:0.3em; line-height:25%;"> 
-								<a data-toggle="tab" href="#me" style="cursor:pointer; text-decoration:none;">  DEV </a> 
-							</span>	
-						</span>
-					</span>
-				</span>
-			</div>
+	   			<p class="intro-position">
+	   				<span>Automation QA / SDET</span>
+	   				<span>ML Enthusiast</span> 
+	   			</p>
+
+	   			<a class="button stroke smoothscroll" href="#about" title="">More About Me</a>
+
+	   		</div>  
+   			
+   		</div>   		 		
+   	</div> <!-- /intro-content --> 
+
+   	<ul class="intro-social">        
+         <li><a href="https://www.facebook.com/dev.shah.18400"><i class="fa fa-facebook"></i></a></li>
+         <li><a href="https://www.linkedin.com/in/dev-shah-20324b80/"><i class="fa fa-linkedin"></i></a></li>
+         <li><a href="https://www.github.com/devsh4"><i class="fa fa-github"></i></a></li>
+      </ul> <!-- /intro-social -->      	
+
+   </section> <!-- /intro -->
+
+
+   <!-- about section
+   ================================================== -->
+   <section id="about">  
+
+   	<div class="row section-intro">
+   		<div class="col-twelve">
+
+   			<h5>About</h5>
+   			<h1>Let me introduce myself.</h1>
+
+   			<div class="intro-info">
+
+   				<img src="images/profile-pic.png" alt="Profile Picture">
+   				<p class="lead"> <strong>Coder by background but QA by choice! </strong> I am a passionate tech professional who loves to learn new things. Well I'm also very passionate about stock markets and sports.</p>
+   			</div>   			
+
+   		</div>   		
+   	</div> <!-- /section-intro -->
+
+   	<div class="row about-content">
+
+   		<div class="col-six tab-full">
+
+   			<h3>Profile</h3>
+   			<p> Test message.</p>
+
+   			<ul class="info-list">
+   				<li>
+   					<strong>Fullname:</strong>
+   					<span>Dev Abhay Shah</span>
+   				</li>
+   				<li>
+   					<strong>Birth Date:</strong>
+   					<span>June 2, 1994</span>
+   				</li>
+   				<li>
+   					<strong>Job:</strong>
+   					<span>Looking for SDET roles</span>
+   				</li>
+   				<li>
+   					<strong>Website:</strong>
+   					<span>devsh4.github.io</span>
+   				</li>
+   				<li>
+   					<strong>Email:</strong>
+   					<span>devsh2694@gmail.com</span>
+   				</li>
+
+   			</ul> <!-- /info-list -->
+
+   		</div>
+
+   		<div class="col-six tab-full">
+
+   			<h3>Skills</h3> 
+   			<p>Lorem ipsum Qui veniam ut consequat ex ullamco nulla in non ut esse in magna sint minim officia consectetur nisi commodo ea magna pariatur nisi cillum.</p>
+
+				<ul class="skill-bars">
+				   <li>
+				   	<div class="progress percent90"><span>90%</span></div>
+				   	<strong>HTML5</strong>
+				   </li>
+				   <li>
+				   	<div class="progress percent85"><span>85%</span></div>
+				   	<strong>CSS3</strong>
+				   </li>
+				   <li>
+				   	<div class="progress percent70"><span>70%</span></div>
+				   	<strong>Java</strong>
+				   </li>
+				   <li>
+				   	<div class="progress percent95"><span>95%</span></div>
+				   	<strong>Python</strong>
+				   </li>
+				   <li>
+
+				   	<div class="progress percent75"><span>75%</span></div>
+				   	<strong>MySql</strong>
+				   </li>
+      
+				</ul> <!-- /skill-bars -->		
+
+   		</div>
+
+   	</div>
+
+   	<div class="row button-section">
+   		<div class="col-twelve">
+   			<a href="#contact" title="Hire Me" class="button stroke smoothscroll">Hire Me</a>
+   			<a href="images/myresume.pdf" target="_blank" title="Download CV" class="button button-primary" data-type="document">Download CV</a>
+   		</div>   		
+   	</div>
+
+   </section> <!-- /process-->    
+
+
+   <!-- resume Section
+   ================================================== -->
+	<section id="resume" class="grey-section">
+
+		<div class="row section-intro">
+   		<div class="col-twelve">
+
+   			<h5>Resume</h5>
+   			<h1>More of my credentials.</h1>
+
+   			<p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
+
+   		</div>   		
+   	</div> <!-- /section-intro--> 
+
+   	<div class="row resume-timeline">
+
+   		<div class="col-twelve resume-header">
+
+   			<h2>Work Experience</h2>
+
+   		</div> <!-- /resume-header -->
+
+   		<div class="col-twelve">
+
+   			<div class="timeline-wrap">
+
+   				<div class="timeline-block">
+
+	   				<div class="timeline-ico">
+	   					<i class="fa fa-briefcase"></i>
+	   				</div>
+
+	   				<div class="timeline-header">
+	   					<h3>Senior QA</h3>
+	   					<p>Oct 2016 - Sep 2017</p>
+	   				</div>
+
+	   				<div class="timeline-content">
+	   					<h4>Pay 1</h4>
+	   					<p>I was hired to lead the testing team and was incharge of automation of Web, App and API’s. I managed performance testing of the servers & applications. Worked hard to emphasize the importance of good coding standards and devise a strategy to start white box testing for new products. Effectively trained resources on good QA practices & automation testing.
+						One of my responsibilities was to do code reviews of scripts developed by my peers. I also took the initiative to set up SDLC processes and release cycle management.
+						<br>
+						<br>
+						HIGHLIGHTS –
+						<br>
+						&#10004 Improved release quality substantially.
+						<br>
+						&#10004 Developed a basic automation framework for web and mobile apps.
+						<br>
+						&#10004 Identified gaps in processes and suggested improvements.
+						<br>
+						&#10004 Field visits to realize requirements & feedback on new products.</p>
+	   				</div>
+
+	   			</div> <!-- /timeline-block -->
+
+	   			<div class="timeline-block">
+
+	   				<div class="timeline-ico">
+	   					<i class="fa fa-briefcase"></i>
+	   				</div>
+
+	   				<div class="timeline-header">
+	   					<h3>Quality Engineer</h3>
+	   					<p>July 2015 - Sep 2016</p>
+	   				</div>
+
+	   				<div class="timeline-content">
+	   					<h4>S&P Global</h4>
+	   					<p> My main responsibilities were to refine requirements to test plans, design test strategies and carry out black box testing. I actively provided valuable inputs in design reviews. 
+						I passionately carried out exploratory and usability testing for the upcoming products and features. Liaised with developers and BA's to identify the root cause and priority of bugs. Effectively dealt with high priority client problems and resolved them on a daily basis.
+						Apart from the expected responsibilities, in my leisure time I started to learn automation in a bid to reduce repetitive manual testing.
+						After learning, I started developing automation scripts for new products and for data comparisons & data driven functionalities. Brainstormed with the product team for possible enhancements and also leveraged product insight to carry out impact analysis.
+						<br>
+						<br>
+						HIGHLIGHTS –
+						<br>
+						&#10004 Developed regression scripts which reduced efforts by 40%.
+						<br>
+						&#10004 Conducted industry specific, Java and automation KT sessions.
+						<br>
+						&#10004 Ensured bug-free releases consistently.
+						<br>
+						&#10004 Received ‘breakthrough achievement’ rating in performance reviews.</p>
+	   				</div>
+
+	   			</div> <!-- /timeline-block -->
+
+	   			<!--<div class="timeline-block">
+
+	   				<div class="timeline-ico">
+	   					<i class="fa fa-graduation-cap"></i>
+	   				</div>
+
+	   				<div class="timeline-header">
+	   					<h3>Web Designer</h3>
+	   					<p>May 2013 - June 2014</p>
+	   				</div>
+
+	   				<div class="timeline-content">
+	   					<h4>Great Designs Studio</h4>
+	   					<p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi incididunt.</p>
+	   				</div>
+
+	   			</div>  /timeline-block -->
+
+   			</div> <!-- /timeline-wrap -->   			
+
+   		</div> <!-- /col-twelve -->
+   		
+   	</div> <!-- /resume-timeline -->
+   	
+   	<div class="row resume-timeline">
+
+   		<div class="col-twelve resume-header">
+
+   			<h2>Education</h2>
+
+   		</div> <!-- /resume-header -->
+
+   		<div class="col-twelve">
+
+   			<div class="timeline-wrap">
+
+   				<div class="timeline-block">
+
+	   				<div class="timeline-ico">
+	   					<i class="fa fa-graduation-cap"></i>
+	   				</div>
+
+	   				<div class="timeline-header">
+	   					<h3>Master's Degree</h3>
+	   					<p>Sep 2017 - Present</p>
+	   				</div>
+
+	   				<div class="timeline-content">
+	   					<div "post-thumbnail">
+							<a href="http://www.queensu.ca/">
+								<img width="240" height="100" src="images/queens.png" class="img-responsive wp-post-image">
+							</a>
+						</div>
+						<div style="position:relative; top:10px; text-align:left;">
+							<span>
+								<strong> M.Sc in Computing </strong>
+							</span>
+						<hr>	
+						</div>
+	   				</div>
+
+	   			</div> <!-- /timeline-block -->
+
+	   			<div class="timeline-block">
+
+	   				<div class="timeline-ico">
+	   					<i class="fa fa-graduation-cap"></i>
+	   				</div>
+
+	   				<div class="timeline-header">
+	   					<h3>Bachelor's Degree</h3>
+	   					<p>July 2011 - May 2015</p>
+	   				</div>
+
+	   				<div class="timeline-content">
+	   					<div "post-thumbnail">
+							<a href="http://www.nmims.edu/">
+								<img width="240" height="100" src="images/nmims.png" class="img-responsive wp-post-image">
+							</a>
+						</div>
+						<div style="position:relative; top:10px; text-align:left;">
+							<span>
+								<strong> B.Tech. in Computer Engineering </strong>
+							</span>
+							<hr>
+						</div>
+	   				</div>
+
+	   			</div> <!-- /timeline-block -->
+
+	   			<!--<div class="timeline-block">
+
+	   				<div class="timeline-ico">
+	   					<i class="fa fa-briefcase"></i>
+	   				</div>
+
+	   				<div class="timeline-header">
+	   					<h3>Bachelor Degree</h3>
+	   					<p>May 2013 - June 2014</p>
+	   				</div>
+
+	   				<div class="timeline-content">
+	   					<h4>Design College</h4>
+	   					<p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi incididunt.</p>
+	   				</div>
+
+	   			</div> /timeline-block -->
+
+   			</div> <!-- /timeline-wrap -->   			
+
+   		</div> <!-- /col-twelve -->
+   		
+   	</div> <!-- /resume-timeline -->
 		
-			<div class 	="txtNew" style="position:relative; top:10px;">
-				<h6 style= "font-size:26px;">
-					<span style = "font-size:36px;">
-						<span style = "font-weight:bolder;">
-							<span style ="font-family:lulo-clean-w01-one-bold,sans-serif; letter-spacing:0.2em;line-height:25%;color:#BA5536";"> 
-								<a data-toggle="tab" href="#me" style="cursor:pointer; text-decoration:none;"> SHAH </a> 
-							</span> 
-						</span>
-					</span>
-				</h6>
-			</div>	
+	</section> <!-- /features -->
+
+
+	<!-- Projects Section
+   ================================================== -->
+	<section id="portfolio">
+
+		<div class="row section-intro">
+   		<div class="col-twelve">
+
+   			<h2>PROJECTS</h2>
+   			<h1>Check Out Some of My Works.</h1>
+
+   			<p class="lead">Test message</p>
+
+   		</div>   		
+   	</div> <!-- /section-intro--> 
+
+   	<div class="row portfolio-content">
+
+   		<div class="col-twelve">
+
+   			<!-- portfolio-wrapper -->
+	         <div id="folio-wrapper" class="block-1-2 block-mob-full stack">
+	         	<div class="bgrid folio-item">
+	               <div class="item-wrap">
+						<img src="images/portfolio/digitrec.png" alt="Digit Recognizer">
+						<a href="#modal-01" class="overlay">	                  	           
+							<div class="folio-item-table">
+								<div class="folio-item-cell">
+									<h3 class="folio-title">Digit Recognizer</h3>	     					    
+									<span class="folio-types">	Fall 2017 </span>
+								</div>	                      	
+							</div>                    
+						</a>
+	               </div>	               
+	        	</div> <!-- /folio-item -->
+
+	        	<div class="bgrid folio-item">
+	               <div class="item-wrap">
+						<img src="images/portfolio/vulnerability1.jpg" alt="Shutterbug">
+						<a href="#modal-02" class="overlay">              		                  
+							<div class="folio-item-table">
+								<div class="folio-item-cell">
+									<h3 class="folio-title">Code Analyser</h3>	     					    
+									<span class="folio-types"> Fall 2017 </span>		     		
+								</div> 	                      	
+							</div>                    
+						</a>
+	               </div>
+	        		</div> <!-- /folio-item -->
+
+	            <div class="bgrid folio-item">
+	               <div class="item-wrap">
+	               	<img src="images/portfolio/datacleansing.jpg"alt="Cleansing">
+	                  <a href="#modal-03" class="overlay">             		                  
+	                     <div class="folio-item-table">
+	                     	<div class="folio-item-cell">
+	                     		<h3 class="folio-title">Data cleansing</h3>	     					    
+		     					    	<span class="folio-types">
+		     					       	 April - May 2017
+		     					      </span>		     		
+		     					   </div> 	                      	
+	                     </div>                    
+	                  </a>
+	               </div>
+	        		</div> <!-- /folio-item -->
+
+	            <div class="bgrid folio-item">
+	               <div class="item-wrap">
+	               	<img src="images/portfolio/automate.jpg" alt="automate">
+	                  <a href="#modal-04" class="overlay">                  	                 
+	                     <div class="folio-item-table">
+	                     	<div class="folio-item-cell">
+	                     		<h3 class="folio-title">App Automation</h3>	     					    
+		     					    	<span class="folio-types">
+		     					       	  Mar-April 2017
+		     					      </span>		     		
+		     					   </div>  	                      	
+	                     </div>                    
+	                  </a>
+	               </div>
+	        		</div> <!-- /folio-item -->     
+
+	        		<div class="bgrid folio-item">
+	               <div class="item-wrap">
+	               	<img src="images/portfolio/appdevelopment.jpg" alt="Lighthouse">
+	                  <a href="#modal-05" class="overlay">             		                  
+	                     <div class="folio-item-table">
+	                     	<div class="folio-item-cell">
+	                     		<h3 class="folio-title">Android App</h3>	     					    
+		     					    	<span class="folio-types">
+		     					       	  Oct 2014 - Mar 2015
+		     					      </span>		     		
+		     					   </div> 	                      	
+	                     </div>                    
+	                  </a>
+	               </div>
+	        		</div> <!-- /folio-item -->
+
+	            <div class="bgrid folio-item">
+	               <div class="item-wrap">
+	               	<img src="images/portfolio/pfmanager.jpg" alt="Salad">
+	                  <a href="#modal-06" class="overlay">
+	                     <div class="folio-item-table">
+	                     	<div class="folio-item-cell">
+	                     		<h3 class="folio-title">Portfolio Manager</h3>	     					    
+		     					    	<span class="folio-types">
+		     					       	  2013-2016
+		     					      </span>		     		
+		     					   </div>	                      	
+	                     </div>                    
+	                  </a>
+	               </div>
+	        		</div> <!-- /folio-item -->   
+
+	            <!-- modal popups - begin
+	            ============================================================= -->
+	            <div id="modal-01" class="popup-modal slider mfp-hide">	
+
+				     	<div class="media">
+				     		<img src="images/portfolio/digitrec_m.png" alt="" />
+				     	</div>      	
+
+					   <div class="description-box">
+					      <h4>Digit Recognizer</h4>		      
+					      <p> Developed a digit recognizer to classify digits from 0-9 using softmax regression. [Python + TensorFlow]</p>
+
+					      <div class="categories">Supervised Learning | Queen's U</div>			               
+					   </div>
+
+			         <div class="link-box">
+			            <a href="https://www.github.com/devsh4">Details</a>
+					      <a href="#" class="popup-modal-dismiss">Close</a>
+			         </div>		      
+
+				   </div> <!-- /modal-01 -->
+
+				   <div id="modal-02" class="popup-modal slider mfp-hide">	
+
+				     	<div class="media">
+				     		<img src="images/portfolio/vulnerability1.jpg" alt="" />
+				     	</div>      	
+
+					   <div class="description-box">
+					      <h4>Static Code Analyser for security vulnerabilities</h4>		      
+					      <p>Developed a static code analyzer in C# to detect security vulnerabilities for C++ code files.</p>
+
+					      <div class="categories">Software Security | Queen's U</div>			               
+					   </div>
+
+			         <div class="link-box">
+			            <a href="https://www.github.com/devsh4">Details</a>
+					      <a href="#" class="popup-modal-dismiss">Close</a>
+			         </div>		      
+
+				   </div> <!-- /modal-02 -->
+
+				   <div id="modal-03" class="popup-modal slider mfp-hide">	
+
+				     	<div class="media">
+				     		<img src="images/portfolio/datacleansing.jpg" alt="" />
+				     	</div>      	
+
+					   <div class="description-box">
+					      <h4>Data cleansing and tagging</h4>		      
+					      <p>Performed data cleaning to fix inaccurate records and tagging using Python for a real estate based company's DB. Additionally also worked on optimizing SQL queries to make existing functions faster.</p>
+					      <div class="categories">Data | Plabro Ltd. </div>			               
+					   </div>
+
+			         <div class="link-box">
+			            <a href="http://github.com/devsh4">Details</a>
+					      <a href="#" class="popup-modal-dismiss">Close</a>
+			         </div>		      
+
+				   </div> <!-- /modal-03 -->
+
+				   <div id="modal-04" class="popup-modal slider mfp-hide">	
+
+				     	<div class="media">
+				     		<img src="images/portfolio/automate.jpg" alt="automate" />
+				     	</div>      	
+
+					   <div class="description-box">
+					     <h4>App Automation using Java and Appium </h4>		      
+					     <p>Developed scripts for automating a chat app to:
+							<ul class="font1">
+							<li>Take periodic backups </li>
+							<li>Send emails of chat history </li>
+							<li>Broadcast messages & send messages dynamically to targeted chats.</li>
+							</ul>
+						 </p>
+							<div class="categories">Automation | Plabro Ltd.</div>			               
+					   </div>
+
+			         <div class="link-box">
+			            <a href="http://www.behance.net">Details</a>
+					      <a href="#" class="popup-modal-dismiss">Close</a>
+			         </div>		      
+
+				   </div> <!-- /modal-04 -->
+
+				   <div id="modal-05" class="popup-modal slider mfp-hide">	
+
+				     	<div class="media">
+				     		<img src="images/portfolio/appdevelopment.jpg" alt="" />
+				     	</div>      	
+
+					   <div class="description-box">
+					      <h4>App for Placement Committee</h4>		      
+					      <p>Built an android app for the college placement committee in a bid to increase the communication between students, faculty and the placement cell and make the life of the placement team easier by automating some important tasks.</p>
+					      <div class="categories">App Development | NMIMS Placement Committee</div>			               
+					   </div>
+
+			         <div class="link-box">
+			            <a href="http://www.behance.net">Details</a>
+					      <a href="#" class="popup-modal-dismiss">Close</a>
+			         </div>		      
+
+				   </div> <!-- /modal-05 -->
+
+				   <div id="modal-06" class="popup-modal slider mfp-hide">	
+
+				     	<div class="media">
+				     		<img src="images/portfolio/pfmanager.jpg" alt="" />
+				     	</div>      	
+
+					   <div class="description-box">
+					      <h4>Portfolio Manager </h4>		      
+					      <p> Successfully managed a portfolio for a small closed group and generated compounded returns > 13% consistently for a period of 3 years. </p>
+
+					      <div class="categories">Stock Markets</div>			               
+					   </div>
+
+			         <div class="link-box">
+			            <a href="http://www.behance.net">Details</a>
+					      <a href="#" class="popup-modal-dismiss">Close</a>
+			         </div>		      
+
+				   </div> <!-- /modal-06 -->
+
+
+				   <!-- modal popups - end
+	            ============================================================= -->
+
+	         </div> <!-- /portfolio-wrapper --> 
+
+   		</div>  <!-- /twelve -->   
+
+   	</div> <!-- /portfolio-content --> 
 		
-			<div id="tt-overlay_id" class="tt-overlay" style="background-color: rgba(26,30,35,0.85)"></div>
-		
-			<div style="position:absolute;top:175px;right:575px;text-align:center;width:90px;height:40px;">
-				<a href="assets/myresume.pdf" target="_blank" data-type="document" role="button">
-					<button class="button" style="vertical-align:middle;"><span class="color_4"><strong>RESUME</strong></span></button>
-				</a>
-			</div>
-			
-			<div class = "card" style="position:absolute;top:0px;right:325px">	
-				<img src='assets/Dev.jpg' class="img-circle" height=150 width=150>
-			
-				<h5> </h5>
-				<h5>	
-					<strong>2nd June, 94</strong>
-				<h5>
-				<h5>	
-					<strong>Indian</strong>
-				</h5>
-				<p>
-					343 333 7451	
+	</section> <!-- /portfolio --> 
+
+
+	<!-- CTA Section
+   ================================================== -->
+	<section id="cta" class="grey-section">
+
+   	<div class="row cta-content">
+
+   		<div class="col-twelve section-ads">  
+
+	     		<h2 class="h01"><a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Styleshout Recommends Dreamhost.</a></h2>
+
+		      <p class="lead">
+		      Looking for an awesome and reliable webhosting? Try <a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT"><span>DreamHost</span></a>.
+				Get <span>$50 off</span> when you sign up with the promocode <span>styleshout</span>. 
+				<!-- Simply type	the promocode in the box labeled “Promo Code” when placing your order. -->	
 				</p>
-				<h5>
-					<strong>devsh2694@gmail.com</strong>
-				</h5>
-				<div style = "text-align:center">  
-					<a href="https://www.github.com/devsh4" class="fa fa-github"></a> 
-					<a href="https://www.linkedin.com/in/dev-shah-20324b80/" class="fa fa-linkedin"></a>  
-					<a href="https://www.facebook.com/dev.shah.18400" class="fa fa-facebook"></a> 
-				</div>
-			</div>
-		</div>
+
+				<div class="action">
+			      <a class="button button-primary large" href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Sign Up Now</a>
+		      </div>		     	
+
+   		</div>
+
+   	</div> <!-- /cta-content -->
+
+   </section> <!-- /cta --> 
+
+	
+	<!-- services Section
+   ================================================== -->
+	<section id="services">
+
+		<div class="overlay"></div>
+
+		<div class="row section-intro">
+   		<div class="col-twelve">
+
+   			<h5>Services</h5>
+   			<h1>What Can I Do For You?</h1>
+
+   			<p class="lead"> Test message.</p>
+
+   		</div>   		
+   	</div> <!-- /section-intro -->
+
+   	<div class="row services-content">
+
+   		<div id="owl-slider" class="owl-carousel services-list">
+
+	      	<div class="service">	
+
+	      		<span class="icon"><i class="icon-earth"></i></span>            
+
+	            <div class="service-content">	
+
+	            	 <h3>Webdesign</h3>
+
+		            <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+	         		</p>
+	         		
+	         	</div> 	         	 
+
+				</div> <!-- /service -->
+
+				<div class="service">	
+
+					<span class="icon"><i class="icon-window"></i></span>                          
+
+	            <div class="service-content">	
+
+	            	<h3>Web Development</h3>  
+
+		            <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+	         		</p>
+
+	            </div>	                          
+
+			   </div> <!-- /service -->
+
+			   <div class="service">
+
+			   	<span class="icon"><i class="icon-paint-brush"></i></span>		            
+
+	            <div class="service-content">
+
+	            	<h3>Branding</h3>
+
+		            <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+	        			</p> 
+
+	            </div> 	            	               
+
+			   </div> <!-- /service -->
+
+				<div class="service">
+
+					<span class="icon"><i class="icon-toggles"></i></span>	              
+
+	            <div class="service-content">
+
+	            	<h3>UI/UX Design</h3>
+
+		            <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+	         		</p> 
+	         		
+	            </div>                
+
+				</div> <!-- /service -->
+
+			   <div class="service">
+
+			   	<span class="icon"><i class="icon-image"></i></span>	            
+
+	            <div class="service-content">
+
+	            	<h3>Graphics Design</h3>
+
+		            <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+	        			</p> 
+
+	            </div>	               
+
+			   </div> <!-- /service -->
+
+			   <div class="service">
+
+			   	<span class="icon"><i class="icon-chat"></i></span>	   	           
+
+	            <div class="service-content">
+
+	            	 <h3>Consultancy</h3>
+
+		            <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+	        			</p> 
+	        			
+	            </div>	               
+
+			   </div> <!-- /service -->
+
+	      </div> <!-- /services-list -->
+   		
+   	</div> <!-- /services-content -->
 		
-		<div class="container1" style = "position:absolute; top:370px; left:200px;" onclick="myFunction()">
-			<ul class="nav nav-tabs">
-				<li><a data-toggle="tab" href="#home"><strong>EXPERIENCE</strong></a></li>
-				<li><a data-toggle="tab" href="#menu1"><strong>SKILLS</strong></a></li>
-				<li><a data-toggle="tab" href="#menu2"><strong>PROJECTS</strong></a></li>
-				<li><a data-toggle="tab" href="#menu3"><strong>EDUCATION</strong></a></li>
-				<li><a data-toggle="tab" href="#menu4"><strong>CERTIFICATIONS</strong></a></li>
-			</ul>
-			
-		
-			<div id="content_main" class="tab-content">
-				<div id="me" class="tab-pane fade">
-					<div id="mainPageContent">
-						<div class="txtNew" id="about_me" style="left: 80px; width: 200px; height:200px;position: absolute; top: 100px;">	
-							<h3 style="text-align:center;">What I aspire?</h3>
-							<p>&nbsp;<p>
-							<img src="assets/sdet_venn.png" height="300px" width="400px" style="text-align:center;">
-						</div>
-						<div class="txtNew" id="about_me" style="left: 533px; width: 280px; height:900px;position: absolute; top: 75px;">
-							<p class="font" style="text-align:center;">
-							<span class="color_3">Hi. I’m </span><span class="color_2">Dev</span><span class="color_3">. I enjoy making people’s lives easier through technology.</span></p>
-							<p class="font" style="text-align:center;"><span class="color_3"><span class="wixGuard">​</span></span></p>
-							<p class="font" style="text-align:center;"><span class="color_3">I’ve been in the </span><span class="color_2">IT industry </span><span class="color_3">industry for over 2 years, and if I’m not helping an end user solve a problem, you’ll find me talking numbers with the management, or brainstorming a new idea with my team.</span></p>
-							<p class="font" style="text-align:center;"><span class="color_3"><span class="wixGuard">​</span></span></p>
-								<p class="font" style="text-align:center;"><span class="color_3">With me, it’s all about </span><span class="color_2">change</span><span class="color_3">. Bringing about change with calculated risks keeps my job exciting and&nbsp;my team </span><span class="color_2">motivated</span><span class="color_3">. They know our problems are theirs to solve, and they can rely on my guidance and expertise to </span><span class="color_2">coach </span><span class="color_3">them through the hurdles.</span></p>
-							<p class="font" style="text-align:center;"><span class="color_3"><span class="wixGuard">​</span></span></p>
-							<p class="font" style="text-align:center;"><span class="color_3">I </span><span class="color_2">learn </span><span class="color_3">from multiple sources – books, blogs, certification and my managers. I don’t like reinventing the wheel. I establish best practices, and tweak as required.</span></p>
-							<p class="font" style="text-align:center;"><span class="color_3">What do others say </span><span class="color_2">about me</span><span class="color_3">? They&nbsp;say I’m reliable, approachable, persistent and funny.</span></p>
-						</div>
-					</div>
-				</div>
-				
-				<div id="home" class="tab-pane fade">
-					<!-- EXPERIENCE -->
-					<div>
-						<a href="http://www.pay1.in/" target="_blank" style="cursor: pointer;">
-							<div style="position:absolute; top:50px; left:50px; width:300px; height:150px;">
-									<img data-type="image" src="assets/exp1_1.png" style="width: 250px; height: 200px; object-fit: cover;opacity:1">
-							</div>
-						</a>
-							
-						<div class="div_style2" style="position: absolute; width: 303px; height: 120px; top: 85px; left: 521px;">
-							<div data-exact-height="48" data-content-padding-horizontal="0" data-content-padding-vertical="0" style="position: absolute; left: 120px; top: 0px; width: 47px; height: 48px;">
-								<div style="position: relative; width: 47px; height: 48px;">
-									<img data-type="image" src="https://static.wixstatic.com/media/841cd7_c69062f801dc4fdcb91c1d0280264c6a~mv2.png/v1/fill/w_47,h_48,al_c,usm_0.66_1.00_0.01/841cd7_c69062f801dc4fdcb91c1d0280264c6a~mv2.png" style="width: 47px; height: 48px; object-fit: cover;">
-								</div>
-							</div>
-							
-							<div class="txtNew" style="width: 303px; position: absolute; left: 0px; top: 40px;">
-								<h4 class = "font_1" style="font-size:16px; text-align:center;">
-									<span class="color_3">
-										<span style="font-size:16px;">
-											<span style="font-family:lulo-clean-w01-one-bold,sans-serif;">
-												<span style="font-weight:bold;letter-spacing:0.2em;">
-													SENIOR QA
-												</span>
-											</span>
-										</span>
-									</span>
-								</h4>
-								<h6 style="font-size:12px; text-align:center;">
-									<span class="color_3">
-										<span style="font-family:avenir-lt-w01_35-light1475496,sans-serif;">
-											<span style="font-size:16px;">Oct 2016 - Sep 2017</span>
-										</span>
-									</span>
-								</h6>
-								<div style="overflow:hidden;position: relative; left: 125px; top: 0px;">
-									<img data-type="image" src="assets/india.jpg" style="width: 45px; height: 40px;"></img>
-								</div>
-							</div>
-						</div>
-					</div>
-						
-						<div class="txtNew" style="left: 916px; width: 59px; position: relative; top: 80px;">
-							<h6 class="font_1" style="font-size:16px;">
-								<span class="color_3">
-									<span style="text-decoration:underline;">
-										<a href="https://devsh4.github.io">
-											<span style="font-size:14px;">
-												<span style="font-family:avenir-lt-w01_35-light1475496,sans-serif;">Details</span>
-											</span>	
-										</a>
-									</span>
-								</span>
-							</h6>
-						</div>
-						
-						<div class="line_break" style="left: 0px; width: 981px; position: absolute; top: 275px; height: 5px;">
-							<div class="hl1line"></div>
-						</div>
-						
-						<a href="https://marketintelligence.spglobal.com/" target="_blank" style="cursor: pointer;">
-							<div style="position:absolute; top:360px; left:85px; width:300px; height:150px;">
-									<img data-type="image" src="assets/exp2_1.png" style="width: 250px; height: 50px; object-fit: cover;opacity:1">
-							</div>
-						</a>
-						
-						<div class="div_style2" style="position: absolute; width: 303px; height: 120px; top: 320px; left: 521px;">
-							<div data-exact-height="48" data-content-padding-horizontal="0" data-content-padding-vertical="0" style="position: absolute; left: 120px; top: 0px; width: 47px; height: 48px;">
-								<div style="position: relative; width: 47px; height: 48px;">
-									<img data-type="image" src="assets/qa_eng.jpg" style="width: 60px; height: 60px; object-fit: cover;">
-								</div>
-							</div>
-							
-							<div class="txtNew" style="width: 303px; position: absolute; left: 0px; top: 50px;">
-								<h4 class="font_1" style="font-size:16px; text-align:center;">
-									<span class="color_3">
-										<span style="font-size:16px;">
-											<span style="font-family:lulo-clean-w01-one-bold,sans-serif;">
-												<span style="font-weight:bold;letter-spacing:0.1em;">
-													QUALITY ENGINEER
-												</span>
-											</span>
-										</span>
-									</span>
-								</h4>
-								<h4 class="font_1" style="font-size:16px; text-align:center;">
-									<span class="color_3">
-										<span style="font-family:avenir-lt-w01_35-light1475496,sans-serif;">
-											<span style="font-size:16px;">July 2015 - Sep 2016</span>
-										</span>
-									</span>
-								</h4>
-								<div style="overflow:hidden;position: relative; left: 125px; top: 0px;">
-									<img data-type="image" src="assets/india.jpg" style="width: 45px; height: 40px;"></img>
-								</div>
-							</div>
-						</div>
-					
-						<div class="txtNew" style="left: 916px; width: 59px; position: relative; top: 300px;">
-							<h6 style="font-size:12px;">
-								<span class="color_3">
-									<span style="text-decoration:underline;">
-										<a href="https://devsh4.github.io/">
-											<span style="font-size:14px;">
-												<span style="font-family:avenir-lt-w01_35-light1475496,sans-serif;">Details</span>
-											</span>	
-										</a>
-									</span>
-								</span>
-							</h6>
-						</div>
-						
-						<div class="line_break" style="left: 0px; width: 981px; position: absolute; top: 525px; height: 5px;">
-							<div class="hl1line"></div>
-						</div>
-						
-				</div>
-			
-				<div id="menu1" class="tab-pane fade">
-					<h3>SKILLSET</h3>
-					<p>List your skills</p>
-				</div>
-				
-				
-				<div id="menu2" class="tab-pane fade">
-					<!-- PROJECTS -->
-					<div class="timeline">
-						<div class="container right">
-							<div class="content">
-								<h3>Nov 2017 - Dec 2017</h3>
-								<h4><strong>Digit Recognizer</strong></h4>
-								<h6><strong> Queen's University </strong></h6>
-								<p>Developed a digit recognizer to classify digit images (0-9) using softmax regression. (Python + TensorFlow)</p>
-							</div>
-						</div>
-						
-						<div class="container left">
-							<div class="content">
-								<h3>Oct 2017 - Dec 2017</h3>
-								<h4><strong>Static analyzer for security vulnerabilities</strong></h4>
-								<h6><strong> Queen's University </strong></h6>
-								<p>Developed a static code analyzer in C# to detect security vulnerabilities like SQL injections and buffer overflow.</p>
-							</div>
-						</div>
-						
-						<div class="container right">
-							<div class="content">
-								<h3>April 2017 - May 2017</h3>
-								<h4><strong>Data normalization</strong></h4>
-								<h6><strong>Plabro (Freelance) </strong></h6>
-								<p>Data cleaning and normalization using Python and optimizing SQL queries to make existing functions effiecient & faster.</p>
-							</div>
-						</div>
-						
-						<div class="container left">
-							<div class="content">
-								<h3>Mar 2017 - April 2017</h3>
-								<h4><strong>App Automation</strong></h4>
-								<h6><strong>Plabro (Freelance) </strong></h6>
-								<p>Created scripts using Java & Appium for automating a widely used chat app to take periodic backups, send emails of chat history, sending broadcast messages and dynamic messages to specific chats based on some data.</p>
-							</div>
-						</div>
-						
-						<div class="container right">
-							<div class="content">
-								<h3>Oct 2014 - April 2015</h3>
-								<h4><strong>Android app</strong></h4>
-								<h6><strong>NMIMS University</strong></h6>
-								<p>Built an android app for the college placement committee in a bid to increase communication between students, faculty & placement cell and make the life of the committee easier by automating important tasks.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				
-				<div id="menu3" class="tab-pane fade">
-					<!-- EDUCATION -->
-					<div style="display:block;">
-						<h2></h2>
-						<div class="col-sm-3" style="position:absolute; top:100px; left:0px;">
-							<article class="blog-post-wrapper">
-								<div class="figure">
-									<div class="post-thumbnail">
-										<a href="http://www.queensu.ca/">
-											<img width="340" height="225" src="assets/queens.png" class="img-responsive wp-post-image">
-										</a>
-									</div>
-								</div>
-								<header class="entry-header">
-									<div style="position:relative; top:10px; text-align:center;">
-										<span>
-											<strong>Master of Science (M.S.)<br>Computing</strong>
-										</span>
-									</div>
-									<div style="position:relative;top:20px;text-align:center;">
-										<ul class="list-inline">
-											<li>
-												<span>
-													<i class="fa fa-graduation-cap"></i>
-														0.00 GPA
-												</span>
-											</li>
-											<li>
-												<i class="fa fa-calendar"></i>2017 – 2018
-											</li>
-										</ul>
-									</div>
-								</header>
-							</article>
+	</section> <!-- /services -->	
+
+
+	<!-- stats Section
+   ================================================== -->
+	<section id="stats" class="count-up">
+
+		<div class="row">
+			<div class="col-twelve">
+
+				<div class="block-1-6 block-s-1-3 block-tab-1-2 block-mob-full stats-list">
+
+					<div class="bgrid stat">
+
+						<div class="icon-part">
+							<i class="icon-pencil-ruler"></i>
 						</div>
 
-						<div class="col-sm-3" style="position:absolute; top:100px; left:400px;">
-							<article class="blog-post-wrapper">
-								<div class="figure">
-									<div "post-thumbnail">
-										<a href="http://www.nmims.edu/">
-											<img width="340" height="200" src="assets/nmims.png" class="img-responsive wp-post-image">
-										</a>
-									</div>
-								</div>
-								
-								<header class="entry-header">
-									<div style="position:relative; top:20px; text-align:center;">
-										<span>
-											<strong> Bachelor of Technology (B.Tech.)<br>Computer Engineering </strong>
-										</span>
-									</div>
-									<div style="position:relative;top:30px;text-align:center;">
-										<ul class="list-inline">
-											<li>
-												<span>
-													<i class="fa fa-graduation-cap"></i>
-														3.13 GPA
-												</span>
-											</li>
-											<li>
-													<i class="fa fa-calendar"></i>2011 – 2015
-											</li>
-										</ul>
-									</div>
-								</header>
-							</article>
-						</div>
-					</div>
-				</div>
-				
-				<div id="menu4" class="tab-pane fade">
-					<h3>CERTIFICATIONS</h3>
-					<p>List your certifications here.</p>
-				</div>
-		</div>
-		
-		<footer class="footer-wrapper">
-			<div>
-				<div style='text-align:center'>
-					© Developed by Dev Shah
-				</div>
-			</div>
-		</footer>
-		
-		<script>
-			function myFunction() {
-				    var textbox = document.getElementById("home");
-					textbox.focus();
-					textbox.scrollIntoView();
-			}
-		</script>
+						<h3 class="stat-count">
+							1500
+						</h3>
 
-	</body>
+						<h5 class="stat-title">
+							Projects Completed
+						</h5>
+
+					</div> <!-- /stat -->					
+
+					<div class="bgrid stat">
+
+						<div class="icon-part">
+							<i class="icon-users"></i>
+						</div>
+
+						<h3 class="stat-count">
+							900
+						</h3>
+
+						<h5 class="stat-title">
+							Happy Clients
+						</h5>
+
+					</div> <!-- /stat -->
+
+					<div class="bgrid stat">
+
+						<div class="icon-part">
+							<i class="icon-badge"></i>
+						</div>
+
+						<h3 class="stat-count">
+							200
+						</h3>
+
+						<h5 class="stat-title">
+							Awards Received
+						</h5>
+
+					</div> <!-- /stat -->									
+
+					<div class="bgrid stat">
+
+						<div class="icon-part">
+							<i class="icon-light-bulb"></i>
+						</div>
+
+						<h3 class="stat-count">
+							120
+						</h3>
+
+						<h5 class="stat-title">
+							Crazy Ideas
+						</h5>
+
+					</div> <!-- /stat -->
+
+					<div class="bgrid stat">
+
+						<div class="icon-part">
+							<i class="icon-cup"></i>
+						</div>
+
+						<h3 class="stat-count">
+							1500
+						</h3>
+
+						<h5 class="stat-title">
+							Coffee Cups
+						</h5>
+
+					</div> <!-- /stat -->
+
+					<div class="bgrid stat">
+
+						<div class="icon-part">
+							<i class="icon-clock"></i>
+						</div>
+
+						<h3 class="stat-count">
+							7200
+						</h3>
+
+						<h5 class="stat-title">
+							Hours
+						</h5>
+
+					</div> <!-- /stat -->
+
+				</div> <!-- /stats-list -->
+
+			</div> <!-- /twelve -->
+		</div> <!-- /row -->
+
+	</section> <!-- /stats -->
+
+	
+   <!-- contact
+   ================================================== -->
+	<section id="contact">
+
+		<div class="row section-intro">
+   		<div class="col-twelve">
+
+   			<h5>Contact</h5>
+   			<h1>I'd Love To Hear From You.</h1>
+
+   			<p class="lead">Test message.</p>
+
+   		</div> 
+   	</div> <!-- /section-intro -->
+
+   	<div class="row contact-form">
+
+   		<div class="col-twelve">
+
+            <!-- form -->
+            <form name="contactForm" id="contactForm" method="post" action="">
+      			<fieldset>
+
+                  <div class="form-field">
+ 						   <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="">
+                  </div>
+                  <div class="form-field">
+	      			   <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="">
+	               </div>
+                  <div class="form-field">
+	     				   <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="">
+	               </div>                       
+                  <div class="form-field">
+	                 	<textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required=""></textarea>
+	               </div>                      
+                 <div class="form-field">
+                     <button class="submitform">Submit</button>
+                     <div id="submit-loader">
+                        <div class="text-loader">Sending...</div>                             
+       				      <div class="s-loader">
+								  	<div class="bounce1"></div>
+								  	<div class="bounce2"></div>
+								  	<div class="bounce3"></div>
+								</div>
+							</div>
+                  </div>
+
+      			</fieldset>
+      		</form> <!-- Form End -->
+
+            <!-- contact-warning -->
+            <div id="message-warning">            	
+            </div>            
+            <!-- contact-success -->
+      		<div id="message-success">
+               <i class="fa fa-check"></i>Your message was sent, thank you!<br>
+      		</div>
+
+         </div> <!-- /col-twelve -->
+   		
+   	</div> <!-- /contact-form -->
+
+   	<div class="row contact-info">
+
+   		<div class="col-four tab-full">
+
+   			<div class="icon">
+   				<i class="icon-pin"></i>
+   			</div>
+
+   			<h5>Where to find me</h5>
+
+   			<p>
+            373 Union Street<br>
+            Kingston, ON<br>
+            K7L2R4 Canada
+            </p>
+
+   		</div>
+
+   		<div class="col-four tab-full collapse">
+
+   			<div class="icon">
+   				<i class="icon-mail"></i>
+   			</div>
+
+   			<h5>Email Me At</h5>
+
+   			<p>devsh2694@gmail.com<br></p>
+
+   		</div>
+
+   		<div class="col-four tab-full">
+
+   			<div class="icon">
+   				<i class="icon-phone"></i>
+   			</div>
+
+   			<h5>Call Me At</h5>
+
+   			<p> 	Mobile: (+1) 343 333 7451 <br>   </p>
+
+   		</div>
+   		
+   	</div> <!-- /contact-info -->
+		
+	</section> <!-- /contact -->
+
+
+   <!-- footer
+   ================================================== -->
+
+   <footer>
+     	<div class="row">
+
+     		<div class="col-six tab-full pull-right social">
+
+
+	      		
+	      </div>
+
+      	<div class="col-six tab-full">
+	      	<div class="copyright">
+		        	<span>© Developed by Dev Shah.</span>          	
+		         </div>		                  
+	      	</div>
+
+	      	<div id="go-top">
+		         <a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-long-arrow-up"></i></a>
+		      </div>
+
+      	</div> <!-- /row -->     	
+   </footer>  
+
+   <div id="preloader"> 
+    	<div id="loader"></div>
+   </div> 
+
+   <!-- Java Script
+   ================================================== --> 
+   <script src="js/jquery-2.1.3.min.js"></script>
+   <script src="js/plugins.js"></script>
+   <script src="js/main.js"></script>
+
+</body>
+
 </html>
-
