@@ -2136,7 +2136,7 @@ header .logo a {
 	margin-bottom: 1.8rem;
 }
 
-#services .section-intro h1 {
+#services .section-intro h2 {
 	color: #FF0090;
 }
 #services .section-intro h5 {
@@ -2159,6 +2159,9 @@ header .logo a {
 .services-list .icon {
 	display: inline-block;
 	margin-bottom: 2.1rem;
+}
+.services-list .icon1 {
+	display: inline-block;
 }
 .services-list .icon i {
 	font-size: 5.4rem;
