@@ -90,7 +90,7 @@ a, a:visited {
 	transition: all 0.3s ease-in-out;
 }
 a:hover, a:focus, a:active {
-	color: #FF0077;
+	color: #83f52c;
 	outline: 0;
 }
 
@@ -1938,13 +1938,14 @@ header .logo a {
 }
 .popup-modal .categories {
 	font-family: "poppins-bold", sans-serif;
-	font-size: 1.1rem;
+	font-size: 1.3rem;
+	color:#FF0077;
 	line-height: 1.8rem;
 	text-transform: uppercase;
 	letter-spacing: .1rem;
 	display: block;
 	text-align: left;
-	color: rgba(0, 0, 0, 0.5);
+	
 }
 .popup-modal .link-box {
 	width: 100%;
@@ -1973,7 +1974,7 @@ header .logo a {
 	border-right: 1px solid rgba(200, 200, 200, 0.1);
 }
 .popup-modal .link-box a:hover {
-	background: #cc005f;
+	background: #FF0077;
 	border: none;
 }
 @media only screen and (max-width:600px) {
@@ -2112,7 +2113,7 @@ header .logo a {
  * ------------------------------------------------------------------- 
  */
 #services {
-	background: #313131 url(../images/bg.jpg) no-repeat center;
+	background: url(../images/bg.jpg) no-repeat center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
@@ -2127,7 +2128,7 @@ header .logo a {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: #151515;
+	background: #000000;
 	opacity: .9;
 }
 
@@ -2269,7 +2270,7 @@ header .logo a {
  * ------------------------------------------------------------------- 
  */
 #contact {
-	background: #A9A9A9;
+	background: #000000;
 	padding-top: 12rem;
 	padding-bottom: 7.2rem;
 }
