@@ -2214,8 +2214,9 @@ header .logo a {
 	width: 1000px;
 }
 #stats .stat {
-	border-left: 1px solid rgba(255, 255, 255, 0.12);
+	border-left: 3px solid rgba(255, 255, 255, 0.12);
 	min-height: 17.4rem;
+	width:183px;
 }
 #stats .stat:first-child {
 	border: none;
@@ -2226,7 +2227,7 @@ header .logo a {
 }
 #stats .stat-count {
 	color: #FFFFFF;
-	font-size: 3.6rem;
+	font-size: 3rem;
 	margin-top: 1.2rem;
 	margin-bottom: 0;
 	font-family: "poppins-medium", sans-serif;
@@ -2234,6 +2235,7 @@ header .logo a {
 }
 #stats .stat-title {
 	color: #ffffff;
+	font-size: 1.5rem;
 }
 
 /**
